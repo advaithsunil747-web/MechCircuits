@@ -1,0 +1,251 @@
+*{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: Arial, sans-serif;
+      background:#def7ff;
+      color:white;
+      min-height:100vh;
+    }
+
+    /* Navbar */
+
+nav{
+    width:100%;
+    padding:10px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.brand img{
+    width:55px;
+    height:55px;
+    background:white;
+    padding:1px;
+}
+
+.brand h1{
+    font-family:'Orbitron', sans-serif;
+    font-size:28px;
+    margin-bottom:2%;
+    letter-spacing:2px;
+}
+
+.mech{
+    color:#012043;
+}
+
+.circuits{
+    color:#004fd6;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    align-items: center;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:rgba(0, 44, 201, 0.811);
+    transition:0.3s;
+    font-size:18px;
+    font-family:Arial, sans-serif
+}
+
+nav ul li a:hover{
+    color:#21cfff;
+}
+
+.contact-menu{
+    position:relative;
+}
+
+.contact-box{
+    display:none;
+    position:absolute;
+    top:35px;
+    right:0;
+    background:white;
+    color:#012043;
+    padding:12px 18px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    width:280px;
+    font-family:Arial, sans-serif;
+    z-index:1000;
+}
+
+.feedback-menu{
+    position:relative;
+}
+
+.feedback-box{
+    display:none;
+    position:absolute;
+    top:40px;
+    right:0;
+    width:290px;
+    background:white;
+    color:#012043;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    font-family:Arial, sans-serif;
+    z-index:1000;
+}
+
+    /* Hero Section */
+    .hero{
+      display:flex;
+      flex-direction:column;
+      justify-content:top;
+      align-items:center;
+      text-align:center;
+      height:85vh;
+      padding:20px;
+    }
+
+    .hero h2{
+      font-size:50px;
+      color:#012043;
+      margin-bottom:5px;
+    }
+
+    .hero p{
+      max-width:750px;
+      font-size:18px;
+      line-height:1;
+      color:#004fd6;
+      margin-bottom:10px;
+    }
+
+    /* Features */
+    .features{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:25px;
+      padding:50px;
+    }
+
+    .card{
+      width:250px;
+      height:250px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      background:rgb(255, 255, 255);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 10px rgba(0, 0, 0, 0.1);
+      padding:30px;
+      border-radius:20px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#00e5ff;
+      box-shadow:0 0 20px rgba(0,229,255,0.3);
+    }
+
+    .card-link{
+    text-decoration:none;
+}
+
+/* Center Battery */
+.battery-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+/* Battery Body */
+.battery{
+    width:90px;
+    height:45px;
+    border:3px solid #000000;
+    border-radius:1px;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Half Fill */
+.battery-level{
+    width:70%;
+    height:100%;
+    background:#000000;
+}
+
+/* Question Mark */
+.question{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* Battery Tip */
+.battery-tip{
+    width:8px;
+    height:18px;
+    background:#000000;
+    border-radius:0 0px 0px 0;
+    margin-left:4px;
+}
+
+    .card h3{
+      color:#012043;
+      margin-bottom:15px;
+    }
+
+    .card p{
+      color:#004fd6;
+      line-height:1.6;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      color:#888;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .hero h2{
+        font-size:40px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+    }

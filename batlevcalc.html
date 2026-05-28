@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Battery Level Calculator</title>
+
+<!-- Orbitron Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="css/batlevcalc.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav>
+
+    <div class="brand">
+        <a href="home.html"><img src="images/logo.png" alt="MechCircuits Logo"></a>
+
+        <h1>
+            <span class="mech"><a href="home.html">Mech</a></span><span class="circuits"><a href="home.html">Circuits</a></span>
+        </h1>
+
+        <ul class="nav-left">
+            <li><a href="home.html">Home</a></li>
+        </ul>
+    </div>
+
+    <ul class="nav-right">
+        <li class="contact-menu">
+    <a href="#" onclick="toggleContact()">Contact Us</a>
+
+    <div class="contact-box" id="contactBox">
+        For any queries please contact:<br>
+        <b>mechcircuits.queries@gmail.com <br>or<br> +91 8089906309 </b>
+    </div>
+</li>
+        <li class="feedback-menu">
+    <a href="#" onclick="toggleFeedback()">Feedback & <Br> Suggestions</a>
+
+    <div class="feedback-box" id="feedbackBox">
+        For feedback & suggestions email:<br>
+        <b>mechcircuits.feedback@gmail.com</b>
+    </div>
+</li>
+    </ul>
+
+</nav>
+
+<!-- Main Content -->
+
+<div class="main">
+
+    <!-- LEFT BOX -->
+
+    <div class="side-box">
+
+        <h2>Voltage vs SOC Graph</h2>
+        <h2>(Single Cell)</h2>
+
+        <div class="graph-container">
+    <canvas id="batteryChart"></canvas>
+</div>
+
+    </div>
+
+    <!-- CENTER CALCULATOR -->
+
+    <div class="container">
+
+        <h1>Battery Level Estimate</h1>
+
+        <!-- Battery Type -->
+        <select id="batteryType">
+            <option value="liion">Li-ion</option>
+            <option value="lipo">Li-Po</option>
+            <option value="lifepo4">LiFePO4</option>
+            <option value="leadacid">Lead Acid</option>
+<option value="alkaline">Alkaline</option>
+<option value="nimh">NiMH</option>
+<option value="coin">Lithium Coin Cell</option>
+        </select>
+
+        <!-- Number of Cells -->
+        <input 
+            type="number"
+            id="cells"
+            placeholder="Number of Cells"
+            min="1"
+        >
+
+        <!-- Voltage Input -->
+        <input 
+            type="number"
+            step="0.01"
+            id="voltage"
+            placeholder="Battery Voltage"
+            min="0"
+        >
+
+        <button onclick="calculateBattery()">
+            Calculate
+        </button>
+
+        <!-- Battery Animation -->
+
+        <div class="battery-container">
+            <div class="battery">
+                <div class="battery-level" id="batteryLevel"></div>
+            </div>
+        </div>
+
+        <div class="result" id="resultText">
+            0%
+        </div>
+
+        <div class="details" id="detailsText">
+            Enter values above
+        </div>
+
+    </div>
+
+    <!-- RIGHT BOX -->
+
+    <div class="side-box">
+
+        <h2>Notes :</h2>
+
+       <ul>
+    <li>
+       For rechargeable batteries, avoid overcharging or overdischarging beyond the recommended voltage limits, as it may damage the battery.
+    </li>
+
+    <li>
+        The displayed values are theoretical estimates only. Actual battery State of Charge (SOC) may vary slightly depending on internal cell chemistry and operating conditions.
+    </li>
+
+    <li>
+        You may enter the number of cells based on your battery configuration. For example, a standard 9V battery can be treated as six alkaline cells. 
+    </li>
+
+    <li>
+        The displayed graph and SOC estimations are based on standard operating conditions, such as room temperature. For improved accuracy, battery voltage should ideally be measured when the battery is at rest and not under active charging or discharging conditions.
+    </li>
+</ul>
+
+    </div>
+
+</div>
+
+<!-- INFO CARD -->
+
+<div class="info-card">
+
+    <h2>More Battery Insights</h2>
+
+    <p>Connecting batteries in series increases voltage, while parallel connection increases capacity.</p>
+    <p>Multiple cells connected in series increase total voltage but not capacity (Ah).</p>
+    <p>Batteries connected in series should ideally have the same capacity and chemistry.</p>
+    <p>Higher battery capacity (mAh/Ah) increases runtime, not voltage.</p>
+    <p>High current loads can cause temporary voltage drops in batteries.</p>
+    <p>Cold temperatures can temporarily reduce available battery capacity.</p>
+    <p>Keeping lithium batteries between 20% and 80% charge can help extend lifespan.</p>
+    <p>LiFePO4 batteries are among the safest lithium battery chemistries.</p>
+    <p>Lithium-ion batteries offer one of the highest energy densities among commercial rechargeable batteries.</p>
+    
+</div>
+
+<script src="js/batlevcalc.js"></script>
+
+</body>
+</html>
