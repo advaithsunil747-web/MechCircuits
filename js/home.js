@@ -1,26 +1,25 @@
-  function toggleContact() {
-    event.preventDefault();
+function toggleContact(event){
+  event.preventDefault();
 
-    let box = document.getElementById("contactBox");
+  let box = document.getElementById("contactBox");
 
-    if (box.style.display === "block") {
-        box.style.display = "none";
-    } else {
-        box.style.display = "block";
-    }
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
 }
 
-function toggleFeedback() {
+function toggleFeedback(event){
+  event.preventDefault();
 
-    event.preventDefault();
+  let box = document.getElementById("feedbackBox");
 
-    let box = document.getElementById("feedbackBox");
-
-    if(box.style.display === "block"){
-        box.style.display = "none";
-    } else {
-        box.style.display = "block";
-    }
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
 }
 
 function toggleMenu(){
