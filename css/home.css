@@ -6,6 +6,7 @@
 
     body{
       font-family: Arial, sans-serif;
+      overflow-x: hidden;
       background:#def7ff;
       color:white;
       min-height:100vh;
@@ -230,22 +231,56 @@ nav ul li a:hover{
       border-top:1px solid rgba(255,255,255,0.08);
     }
 
-    @media(max-width:768px){
+    @media (max-width: 768px){
 
-      nav{
-        flex-direction:column;
-        gap:20px;
-      }
+  nav{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+  }
 
-      .hero h2{
-        font-size:40px;
-      }
+  nav ul{
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+  }
 
-      .hero p{
-        font-size:16px;
-      }
+  .brand h1{
+    font-size: 22px;
+    text-align: center;
+  }
 
-      nav ul{
-        gap:15px;
-      }
-    }
+  .hero{
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .hero h2{
+    font-size: 32px;
+  }
+
+  .hero p{
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .features{
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  .card{
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .card h3{
+    font-size: 18px;
+  }
+
+  .card p{
+    font-size: 14px;
+  }
+}
