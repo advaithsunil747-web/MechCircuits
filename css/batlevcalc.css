@@ -105,6 +105,8 @@ nav ul li a:hover{
    CONTACT & FEEDBACK
 =========================== */
 
+/* Desktop */
+
 .contact-menu,
 .feedback-menu{
     position:relative;
@@ -113,12 +115,10 @@ nav ul li a:hover{
 .contact-box,
 .feedback-box{
     display:none;
-    position:fixed;
-    top:90px;
-    left:50%;
-    transform:translateX(-50%);
+    position:absolute;
+    top:42px;
+    right:0;
     width:320px;
-    max-width:90%;
     background:#fff;
     color:#012043;
     padding:18px;
@@ -131,11 +131,11 @@ nav ul li a:hover{
 @keyframes popup{
     from{
         opacity:0;
-        transform:translate(-50%, -10px);
+        transform:translateY(-8px);
     }
     to{
         opacity:1;
-        transform:translate(-50%,0);
+        transform:translateY(0);
     }
 }
 
@@ -426,6 +426,16 @@ nav{
     margin:0;
     text-align:center;
     line-height:1.2;
+}
+   .contact-box,
+.feedback-box{
+    position:fixed;
+    top:90px;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+    width:320px;
+    max-width:90%;
 }
 }
 
