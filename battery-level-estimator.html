@@ -58,7 +58,7 @@
         <li><a href="index.html">Home</a></li>
 
         <li class="contact-menu">
-            <a href="#" onclick="toggleContact(); return false;">Contact Us</a>
+            <a href="#" onclick="event.stopPropagation(); toggleContact(); return false;">Contact Us</a>
 
             <div class="contact-box" id="contactBox">
                 <p><strong>Email:</strong></p>
@@ -67,7 +67,7 @@
         </li>
 
         <li class="feedback-menu">
-            <a href="#" onclick="toggleFeedback(); return false;">Feedback &amp; Suggestions</a>
+            <a href="#" onclick="event.stopPropagation(); toggleFeedback(); return false;">Feedback &amp; Suggestions</a>
 
             <div class="feedback-box" id="feedbackBox">
                 <p>Share your ideas and suggestions with us.</p>
