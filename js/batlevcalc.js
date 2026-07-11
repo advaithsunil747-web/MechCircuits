@@ -363,30 +363,50 @@ document.getElementById("batteryType")
     createChart(this.value);
 });
 
-function toggleContact() {
-    event.preventDefault();
+function toggleContact(){
 
-    let box = document.getElementById("contactBox");
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
 
-    if (box.style.display === "block") {
-        box.style.display = "none";
-    } else {
-        box.style.display = "block";
+    feedback.style.display="none";
+
+    if(contact.style.display==="block"){
+        contact.style.display="none";
+    }
+    else{
+        contact.style.display="block";
     }
 }
 
-function toggleFeedback() {
+function toggleFeedback(){
 
-    event.preventDefault();
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
 
-    let box = document.getElementById("feedbackBox");
+    contact.style.display="none";
 
-    if(box.style.display === "block"){
-        box.style.display = "none";
-    } else {
-        box.style.display = "block";
+    if(feedback.style.display==="block"){
+        feedback.style.display="none";
+    }
+    else{
+        feedback.style.display="block";
     }
 }
+
+document.addEventListener("click", function(event){
+
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
+
+    if(
+        !event.target.closest(".contact-menu") &&
+        !event.target.closest(".feedback-menu")
+    ){
+        contact.style.display="none";
+        feedback.style.display="none";
+    }
+
+});
 
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
