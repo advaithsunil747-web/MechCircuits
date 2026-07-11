@@ -349,124 +349,71 @@ canvas{
 
 @media (max-width:600px){
 
-   nav{
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    padding:1rem;
-}
-
-.brand{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    width:100%;
-}
-
-.hamburger{
-    display:flex;
-}
-
-nav ul{
-    display:none;
-    flex-direction:column;
-    width:100%;
-    margin-top:15px;
-    gap:0;
-    background:#fff;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-}
-
-nav ul.active{
-    display:flex;
-}
-
-   .brand img{
-        width:50px;
-        height:50px;
+    nav{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:wrap;
+        padding:15px;
     }
 
-    .brand h1{
-        font-size:1.4rem;
-        letter-spacing:1px;
+    .brand{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        flex:1;
     }
 
-    nav ul li{
-        width:100%;
-        text-align:center;
-    }
-
-    nav ul li a{
-        display:block;
-        padding:.45rem 0;
-        font-size:1rem;
-    }
-
-    .main{
-        padding:1rem;
-        gap:18px;
-    }
-
-    .side-box,
-    .container{
-        width:100%;
-        padding:1.3rem;
-        border-radius:15px;
-    }
-
-    .info-card{
-        width:95%;
-        padding:1.4rem;
-        border-radius:15px;
-    }
-
-    .info-card h2{
-        text-align:center;
-    }
-
-    .info-card p{
-        font-size:.96rem;
-        line-height:1.7;
-    }
-
-    input,
-    select,
-    button{
-        width:100%;
-        font-size:1rem;
-    }
-
-    .battery{
-        width:110px;
+    .brand img{
+        width:45px;
         height:45px;
     }
 
-    .battery::after{
-        top:12px;
-        height:16px;
+    .brand h1{
+        font-size:28px;
+        margin:0;
     }
 
-    .result{
-        font-size:1.2rem;
+    .hamburger{
+        display:flex;
+        flex-direction:column;
+        gap:5px;
+        cursor:pointer;
+        margin-left:auto;
     }
 
-    .details{
-        font-size:.95rem;
+    .hamburger span{
+        width:28px;
+        height:3px;
+        background:#003366;
+        border-radius:3px;
     }
 
-    .graph-container{
-        height:260px;
-    }
-
-    .contact-box,
-    .feedback-box{
-        position:static;
+    /* Hide menu initially */
+    #nav-links{
+        display:none;
         width:100%;
-        margin-top:10px;
-        box-shadow:0 4px 12px rgba(0,0,0,.12);
+        flex-direction:column;
+        background:white;
+        margin-top:15px;
+        border-radius:10px;
+        box-shadow:0 4px 12px rgba(0,0,0,.15);
     }
-}
+
+    #nav-links.active{
+        display:flex;
+    }
+
+    #nav-links li{
+        width:100%;
+    }
+
+    #nav-links li a{
+        display:block;
+        padding:15px;
+        text-align:left;
+    }
 
 /* ===========================
    EXTRA SMALL PHONES
