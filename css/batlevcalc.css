@@ -1,237 +1,249 @@
+/* ===========================
+   RESET
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    font-family: Arial, sans-serif;
-    background:#def7ff;
-    min-height:100vh;
+html{
+    scroll-behavior:smooth;
 }
 
-/* Navbar */
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#def7ff;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#222;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 
 nav{
     width:100%;
-    padding:8px 25px;
+    padding:0.75rem 2rem;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:white;
-    border-bottom:1px solid rgba(0,0,0,0.1);
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    background:#fff;
+    border-bottom:1px solid rgba(0,0,0,.08);
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .brand{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
 }
 
 .brand img{
     width:55px;
     height:55px;
-    background:white;
-    padding:1px;
+    display:block;
 }
 
 .brand h1{
-    font-family:'Orbitron', sans-serif;
-    font-size:28px;
-    margin-bottom:2%;
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(1.4rem,2vw,1.8rem);
     letter-spacing:2px;
+    margin:0;
 }
 
 .mech a{
-    text-decoration: none;
+    text-decoration:none;
     color:#012043;
 }
 
 .circuits a{
-    text-decoration: none;
-    color:#004fd6;
+    text-decoration:none;
+    color:#0057d9;
 }
 
 nav ul{
     display:flex;
-    align-items: center;
+    align-items:center;
+    gap:2rem;
     list-style:none;
-    gap:30px;
 }
 
 nav ul li a{
     text-decoration:none;
-    text-align: center;
-    color:rgba(0, 44, 201, 0.811);
-    transition:0.3s;
-    font-size:18px;
-    font-family: Arial, sans-serif;
+    color:#003db8;
+    font-size:1.05rem;
+    transition:.3s;
 }
 
 nav ul li a:hover{
-    color:#21cfff;
+    color:#00bcd4;
 }
 
-.contact-menu{
-    position:relative;
-}
+/* ===========================
+   CONTACT & FEEDBACK
+=========================== */
 
-.contact-box{
-    display:none;
-    position:absolute;
-    top:35px;
-    right:0;
-    background:white;
-    color:#012043;
-    padding:12px 18px;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    width:280px;
-    font-family:Arial, sans-serif;
-    z-index:1000;
-}
-
+.contact-menu,
 .feedback-menu{
     position:relative;
 }
 
+.contact-box,
 .feedback-box{
     display:none;
     position:absolute;
-    top:40px;
     right:0;
-    width:290px;
-    background:white;
+    top:40px;
+    background:#fff;
     color:#012043;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    font-family:Arial, sans-serif;
-    z-index:1000;
+    width:290px;
+    padding:16px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    z-index:999;
 }
 
-/* Main Layout */
+.feedback-box{
+    width:300px;
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
 
 .main{
     display:flex;
     justify-content:center;
     align-items:flex-start;
     gap:25px;
-    padding:40px 20px;
     flex-wrap:wrap;
+    padding:2rem 1rem;
 }
 
-/* Side Boxes + Calculator Same Size */
+/* ===========================
+   CARDS
+=========================== */
 
 .side-box,
 .container{
-    background:#ffffff;
-    width:450px;
-    min-height:500px;
-    padding:28px;
+    background:#fff;
+    width:100%;
+    max-width:450px;
+    padding:1.8rem;
     border-radius:18px;
-    box-shadow:0 4px 15px rgba(82,82,82,0.18);
+    box-shadow:0 5px 18px rgba(0,0,0,.12);
 }
 
 .container{
     text-align:center;
 }
+
 .side-box h2{
-    text-align: center;
-    margin-bottom:15px;
+    text-align:center;
     color:#003366;
-    font-family:Arial, sans-serif;
-    font-size:25px;
+    font-size:clamp(1.4rem,2vw,1.6rem);
+    margin-bottom:1rem;
 }
 
 .side-box ul{
-    padding-left: 5dvh;
-    padding-top: 1dvb;
-    padding-right: 3dvh;
-    margin-bottom:20px;
+    padding-left:1.4rem;
 }
 
 .side-box li{
-    margin-bottom:20px;
+    margin-bottom:1rem;
+    line-height:1.6;
 }
 
-/* Bottom Info Card */
+/* ===========================
+   INFO CARD
+=========================== */
 
 .info-card{
-    width:calc(100% - 40px);
-    max-width:1400px;
-
-    margin:0 auto 40px auto;
-
-    background:white;
-    padding:30px;
-    padding-left: 3%;
-
+    width:min(1400px,95%);
+    margin:0 auto 2.5rem;
+    background:#fff;
+    padding:2rem;
     border-radius:18px;
-
-    box-shadow:0 4px 15px rgba(82,82,82,0.18);
+    box-shadow:0 5px 18px rgba(0,0,0,.12);
 }
 
 .info-card h2{
     color:#003366;
-    margin-bottom:15px;
-    font-size:28px;
+    font-size:clamp(1.6rem,2.5vw,2rem);
+    margin-bottom:1rem;
 }
 
 .info-card p{
-    line-height:1.8;
-    margin-left: 10%;
     color:#333;
-    font-size:17px;
+    line-height:1.8;
+    font-size:1rem;
 }
+
+/* ===========================
+   CALCULATOR
+=========================== */
 
 .container h1{
-    color:#000000;
-    margin-bottom:20px;
+    color:#000;
+    margin-bottom:1.3rem;
+    font-size:clamp(1.6rem,3vw,2rem);
 }
 
-input, select{
-    width:90%;
-    padding:10px;
-    margin:10px 0;
-    border:2px solid #636363;
+input,
+select{
+    width:100%;
+    padding:.75rem;
+    margin:.75rem 0;
+    border:2px solid #666;
     border-radius:8px;
-    font-size:16px;
-    color:black;
+    font-size:1rem;
+    transition:.3s;
 }
 
-input:focus, select:focus{
+input:focus,
+select:focus{
     outline:none;
     border-color:#00bcd4;
-    box-shadow:0 0 8px #00bcd4;
+    box-shadow:0 0 8px rgba(0,188,212,.4);
 }
 
 button{
-    background:#00e5ff;
-    border:2px solid #0097a7;
-    padding:10px 20px;
+    width:100%;
+    padding:.8rem;
+    margin-top:1rem;
+    border:none;
     border-radius:8px;
-    font-size:16px;
+    background:#00dfff;
+    color:#000;
+    font-size:1rem;
     cursor:pointer;
-    margin-top:10px;
-    transition:0.3s;
+    transition:.3s;
 }
 
 button:hover{
-    background:#00bcd4;
+    background:#00b8d4;
 }
+
+/* ===========================
+   BATTERY
+=========================== */
 
 .battery-container{
     display:flex;
     justify-content:center;
-    margin-top:25px;
+    margin-top:1.8rem;
 }
 
 .battery{
     width:120px;
     height:50px;
-    border:3px solid #000000;
+    border:3px solid #000;
     border-radius:8px;
     position:relative;
     overflow:hidden;
@@ -244,96 +256,225 @@ button:hover{
     top:14px;
     width:8px;
     height:18px;
-    background:#000000;
+    background:#000;
     border-radius:2px;
 }
 
 .battery-level{
+    width:0;
     height:100%;
-    width:0%;
     background:limegreen;
-    transition:0.5s;
+    transition:.5s;
 }
 
 .result{
-    margin-top:15px;
-    font-size:22px;
-    color:black;
+    margin-top:1rem;
+    font-size:1.35rem;
+    color:#000;
 }
 
 .details{
-    margin-top:10px;
-    color:#7b7b7b;
+    margin-top:.7rem;
+    color:#666;
 }
-
-/* Graph Container */
+/* ===========================
+   GRAPH
+=========================== */
 
 .graph-container{
     position:relative;
     width:100%;
-    height:360px;
-    margin-top:10px;
+    height:clamp(250px,40vw,360px);
+    margin-top:1rem;
 }
 
-/* Mobile Responsive */
+canvas{
+    width:100% !important;
+    height:100% !important;
+}
 
-@media (max-width: 1000px){
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:1000px){
+
+    nav{
+        padding:1rem 1.5rem;
+    }
 
     .main{
         flex-direction:column;
         align-items:center;
-        padding:20px 10px;
+        gap:20px;
+        padding:1.5rem 1rem;
     }
 
     .side-box,
     .container{
-        width:90%;
-        max-width:500px;
+        max-width:650px;
+        width:100%;
     }
 
     .info-card{
         width:95%;
-        padding:20px;
+        padding:1.8rem;
+    }
+
+    .contact-box,
+    .feedback-box{
+        width:280px;
     }
 }
 
-@media (max-width: 600px){
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:600px){
 
     nav{
         flex-direction:column;
-        align-items:center;
-        gap:10px;
-        padding:12px;
+        justify-content:center;
+        gap:12px;
+        padding:1rem;
+    }
+
+    .brand{
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
+    }
+
+    .brand img{
+        width:50px;
+        height:50px;
     }
 
     .brand h1{
-        font-size:20px;
-        text-align:center;
+        font-size:1.4rem;
+        letter-spacing:1px;
     }
 
     nav ul{
         flex-direction:column;
         gap:12px;
-        padding:0;
+        width:100%;
+    }
+
+    nav ul li{
+        width:100%;
+        text-align:center;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:.45rem 0;
+        font-size:1rem;
+    }
+
+    .main{
+        padding:1rem;
+        gap:18px;
     }
 
     .side-box,
     .container{
-        width:95%;
-        padding:18px;
+        width:100%;
+        padding:1.3rem;
+        border-radius:15px;
     }
 
     .info-card{
         width:95%;
-        padding:18px;
-        font-size:15px;
+        padding:1.4rem;
+        border-radius:15px;
     }
 
-    input, select{
-        width:100%;
+    .info-card h2{
+        text-align:center;
     }
 
+    .info-card p{
+        font-size:.96rem;
+        line-height:1.7;
+    }
+
+    input,
+    select,
     button{
         width:100%;
+        font-size:1rem;
+    }
+
+    .battery{
+        width:110px;
+        height:45px;
+    }
+
+    .battery::after{
+        top:12px;
+        height:16px;
+    }
+
+    .result{
+        font-size:1.2rem;
+    }
+
+    .details{
+        font-size:.95rem;
+    }
+
+    .graph-container{
+        height:260px;
+    }
+
+    .contact-box,
+    .feedback-box{
+        position:static;
+        width:100%;
+        margin-top:10px;
+        box-shadow:0 4px 12px rgba(0,0,0,.12);
+    }
+}
+
+/* ===========================
+   EXTRA SMALL PHONES
+=========================== */
+
+@media (max-width:380px){
+
+    nav{
+        padding:.8rem;
+    }
+
+    .brand h1{
+        font-size:1.2rem;
+    }
+
+    .container,
+    .side-box,
+    .info-card{
+        padding:1rem;
+    }
+
+    .container h1{
+        font-size:1.35rem;
+    }
+
+    .side-box h2,
+    .info-card h2{
+        font-size:1.3rem;
+    }
+
+    input,
+    select,
+    button{
+        font-size:.95rem;
+        padding:.7rem;
+    }
+
+    .graph-container{
+        height:220px;
     }
 }
