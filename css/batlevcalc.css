@@ -84,6 +84,22 @@ nav ul li a{
 nav ul li a:hover{
     color:#00bcd4;
 }
+/* Hamburger Menu */
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:#003366;
+    border-radius:3px;
+    transition:.3s;
+}
 
 /* ===========================
    CONTACT & FEEDBACK
