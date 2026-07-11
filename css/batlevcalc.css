@@ -404,11 +404,11 @@ nav{
         width:100%;
     }
 
-    #nav-links li a{
-        display:block;
-        padding:15px;
-        text-align:left;
-    }
+#nav-links li a{
+    display:block;
+    padding:12px 15px;   
+    text-align:center;   
+}
 
 /* ===========================
    EXTRA SMALL PHONES
