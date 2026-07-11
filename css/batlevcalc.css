@@ -349,20 +349,40 @@ canvas{
 
 @media (max-width:600px){
 
-    nav{
-        flex-direction:column;
-        justify-content:center;
-        gap:12px;
-        padding:1rem;
-    }
+   nav{
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:1rem;
+}
 
-    .brand{
-        justify-content:center;
-        flex-wrap:wrap;
-        text-align:center;
-    }
+.brand{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
 
-    .brand img{
+.hamburger{
+    display:flex;
+}
+
+nav ul{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    margin-top:15px;
+    gap:0;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+}
+
+nav ul.active{
+    display:flex;
+}
+
+   .brand img{
         width:50px;
         height:50px;
     }
@@ -370,12 +390,6 @@ canvas{
     .brand h1{
         font-size:1.4rem;
         letter-spacing:1px;
-    }
-
-    nav ul{
-        flex-direction:column;
-        gap:12px;
-        width:100%;
     }
 
     nav ul li{
