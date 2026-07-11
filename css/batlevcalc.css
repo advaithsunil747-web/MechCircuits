@@ -393,7 +393,7 @@ nav{
     display:none;
     width:100%;
     flex-direction:column;
-    margin-top:15px;
+    margin-top:10px;
 }
 
 #nav-links.active{
