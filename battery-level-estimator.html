@@ -41,38 +41,44 @@
 <nav>
 
     <div class="brand">
-        <a href="index.html"><img src="images/logo.png" alt="MechCircuits Logo"></a>
+        <img src="logo.png" alt="MechCircuits Logo">
 
         <h1>
             <span class="mech"><a href="index.html">Mech</a></span><span class="circuits"><a href="index.html">Circuits</a></span>
         </h1>
-
-        <ul class="nav-left">
-            <li><a href="index.html">Home</a></li>
-        </ul>
     </div>
 
-    <ul class="nav-right">
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+
         <li class="contact-menu">
-    <a href="#" onclick="toggleContact()">Contact Us</a>
+            <a href="#" onclick="toggleContact(); return false;">Contact Us</a>
 
-    <div class="contact-box" id="contactBox">
-        For any queries please contact:<br>
-        <b>mechcircuits.queries@gmail.com <br>or<br> +91 8089906309 </b>
-    </div>
-</li>
+            <div class="contact-box" id="contactBox">
+                <p><strong>Email:</strong></p>
+                <p>mechcircuits.queries@gmail.com</p>
+            </div>
+        </li>
+
         <li class="feedback-menu">
-    <a href="#" onclick="toggleFeedback()">Feedback & <Br> Suggestions</a>
+            <a href="#" onclick="toggleFeedback(); return false;">Feedback &amp; Suggestions</a>
 
-    <div class="feedback-box" id="feedbackBox">
-        For feedback & suggestions email:<br>
-        <b>mechcircuits.feedback@gmail.com</b>
-    </div>
-</li>
+            <div class="feedback-box" id="feedbackBox">
+                <p>Share your ideas and suggestions with us.</p>
+                <p><strong>Email:</strong></p>
+                <p>mechcircuits.feedback@gmail.com</p>
+            </div>
+        </li>
     </ul>
 
 </nav>
-
+    
 <!-- Main Content -->
 
 <div class="main">
