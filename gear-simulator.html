@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Change these for each page -->
+    <title>Page Title | MechCircuits</title>
+
+    <meta name="description" content="Page description here.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://mechcircuits.com/page-name.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/gear-simulator.css">
+
+</head>
+
+<body>
+
+<!-- ==========================
+        NAVIGATION BAR
+========================== -->
+
+<nav>
+
+    <div class="brand">
+        <img src="logo.png" alt="MechCircuits Logo">
+
+        <h1>
+            <span class="mech"><a href="index.html">Mech</a></span><span class="circuits"><a href="index.html">Circuits</a></span>
+        </h1>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="contact-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleContact(); return false;">Contact Us</a>
+
+            <div class="contact-box" id="contactBox">
+                <p><strong>For any queries, please email us at:</strong></p>
+                <p>mechcircuits.queries@gmail.com</p>
+            </div>
+        </li>
+
+        <li class="feedback-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleFeedback(); return false;">Feedback &amp; Suggestions</a>
+
+            <div class="feedback-box" id="feedbackBox">
+                <p><strong>We value your feedback and suggestions.Please email us at:</strong></p>
+                <p>mechcircuits.feedback@gmail.com</p>
+            </div>
+        </li>
+    </ul>
+
+</nav>
+
+<!-- ==========================
+      PAGE CONTENT START
+========================== -->
+
+<main class="simulator-layout">
+
+    <!-- =========================
+         LEFT SIDEBAR
+    ========================== -->
+
+    <aside class="control-panel">
+
+        <button id="addGearButton" class="add-gear-button">
+            + Add Gear
+        </button>
+
+
+        <div class="gear-list" id="gearList">
+
+            <!-- Added gears will appear here -->
+
+        </div>
+
+        <div class="input-parameter-section">
+
+            <h3>Run Gear Train</h3>
+
+            <!-- GEAR -->
+            <div class="parameter-row">
+
+                <label for="gearParameterSelect">
+                    Gear
+                </label>
+
+                <select id="gearParameterSelect">
+
+                    <option value="">
+                        Select Gear
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SPEED -->
+            <div class="parameter-row">
+
+                <label for="gearSpeedInput">
+                    Speed 
+                </label>
+
+                <input
+                    type="number"
+                    id="gearSpeedInput"
+                    placeholder="rpm"
+                >
+
+            </div>
+
+
+            <!-- TORQUE -->
+            <div class="parameter-row">
+
+                <label for="gearTorqueInput">
+                    Torque 
+                </label>
+
+                <input
+                    type="number"
+                    id="gearTorqueInput"
+                    placeholder="N.m"
+                >
+
+            </div>
+
+            <!-- RUN and STOP BUTTON -->
+
+                <div class="gear-train-buttons">
+
+                    <button
+                        id="runGearTrainButton"
+                        class="run-gear-train-button"
+                    >
+                        Run
+                    </button>
+
+                    <button
+                        id="stopGearTrainButton"
+                        class="stop-gear-train-button"
+                    >
+                        Stop
+                    </button>
+
+                </div>
+
+        </div>
+
+        <!-- =========================
+            OUTPUT SECTION
+        ========================= -->
+
+        <div class="input-parameter-section">
+
+            <h3>Output</h3>
+
+            <!-- OUTPUT GEAR -->
+            <div class="parameter-row">
+
+                <label for="outputGearSelect">
+                    Gear
+                </label>
+
+                <select id="outputGearSelect">
+
+                    <option value="">
+                        Select Gear
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- OUTPUT SPEED -->
+            <div class="parameter-row">
+
+                <label for="outputSpeed">
+                    Speed
+                </label>
+
+                <input
+                    type="text"
+                    id="outputSpeed"
+                    placeholder="rpm"
+                    readonly
+                >
+
+            </div>
+
+            <!-- OUTPUT TORQUE -->
+            <div class="parameter-row">
+
+                <label for="outputTorque">
+                    Torque
+                </label>
+
+                <input
+                    type="text"
+                    id="outputTorque"
+                    placeholder="N.m"
+                    readonly
+                >
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         CANVAS AREA
+    ========================== -->
+
+    <section class="canvas-area">
+
+        <canvas id="simulationCanvas"></canvas>
+
+    </section>
+
+
+    <!-- =========================
+         GEAR INPUT MODAL
+    ========================== -->
+
+    <div class="gear-modal-overlay" id="gearModalOverlay">
+
+        <div class="gear-modal">
+
+            <h2>Gear Parameters</h2>
+
+
+            <label for="gearTeeth">
+                Number of Teeth 
+            </label>
+
+            <input
+            type="number"
+            id="gearTeeth"
+            min="14"
+            value="20"
+            >
+
+
+            <label for="gearModule">
+                Module (mm)
+            </label>
+
+            <input
+                type="number"
+                id="gearModule"
+                min="0.1"
+                step="0.1"
+                value="2"
+            >
+
+
+            <label for="gearPitchDiameter">
+                Pitch Diameter (mm)
+            </label>
+
+            <input
+                type="number"
+                id="gearPitchDiameter"
+                min="1"
+                step="0.1"
+                value="40"
+            >
+
+
+            
+            <label for="gearPressureAngle">
+                Pressure Angle (°)
+            </label>
+
+            <input
+                type="number"
+                id="gearPressureAngle"
+                value="20"
+                disabled
+            >
+
+                <div class="modal-buttons">
+
+                 <button id="deleteGear">
+                     Delete Gear
+                 </button>
+
+                 <button id="cancelGear">
+                    Cancel
+                 </button>
+
+                 <button id="generateGear">
+                    Generate
+                 </button>
+
+                </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- ==========================
+       PAGE CONTENT END
+========================== -->
+
+<script src="js/gear-simulator.js"></script>
+
+</body>
+
+</html>
