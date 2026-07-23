@@ -16,7 +16,6 @@ body{
     color:#222;
 }
 
-
 /* ===========================
    NAVBAR
 =========================== */
@@ -269,6 +268,7 @@ nav ul li a:hover{
         display:flex;
         justify-content:center;
         align-items:center;
+        gap:40px; 
     }
 
     .card{
@@ -367,4 +367,37 @@ nav ul li a:hover{
   font-size: 28px;
   cursor: pointer;
   color: #012043;
+}
+
+/* Gear Icon */
+
+.gear-icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.gear-icon img{
+    width:120px;      
+    height:auto;
+    display:block;
+}
+
+.gear{
+    position:absolute;
+    color:#000;
+    line-height:1;
+}
+
+.gear-large{
+    font-size:72px;
+    left:25px;
+    top:10px;
+}
+
+.gear-small{
+    font-size:44px;
+    left:0;
+    top:42px;
 }
