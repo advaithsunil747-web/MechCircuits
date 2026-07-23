@@ -1,113 +1,241 @@
 *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    body{
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-      background:#def7ff;
-      color:white;
-      min-height:100vh;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    /* Navbar */
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#def7ff;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#222;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 
 nav{
     width:100%;
-    padding:10px 25px;
+    padding:0.75rem 2rem;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:white;
-    border-bottom:1px solid rgba(0,0,0,0.1);
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    background:#fff;
+    border-bottom:1px solid rgba(0,0,0,.08);
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .brand{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
 }
 
 .brand img{
     width:55px;
     height:55px;
-    background:white;
-    padding:1px;
+    display:block;
 }
 
 .brand h1{
-    font-family:'Orbitron', sans-serif;
-    font-size:28px;
-    margin-bottom:2%;
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(1.4rem,2vw,1.8rem);
     letter-spacing:2px;
+    margin:0;
 }
 
-.mech{
+.mech a{
+    text-decoration:none;
     color:#012043;
 }
 
-.circuits{
-    color:#004fd6;
+.circuits a{
+    text-decoration:none;
+    color:#0057d9;
 }
 
 nav ul{
     display:flex;
+    align-items:center;
+    gap:2rem;
     list-style:none;
-    align-items: center;
-    gap:30px;
 }
 
 nav ul li a{
     text-decoration:none;
-    color:rgba(0, 44, 201, 0.811);
-    transition:0.3s;
-    font-size:18px;
-    font-family:Arial, sans-serif
+    color:#003db8;
+    font-size:1.05rem;
+    transition:.3s;
 }
 
 nav ul li a:hover{
-    color:#21cfff;
+    color:#00bcd4;
 }
 
-.contact-menu{
-    position:relative;
-}
+/* ===========================
+   HAMBURGER MENU
+=========================== */
 
-.contact-box{
+.hamburger{
     display:none;
-    position:absolute;
-    top:35px;
-    right:0;
-    background:white;
-    color:#012043;
-    padding:12px 18px;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    width:280px;
-    font-family:Arial, sans-serif;
-    z-index:1000;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
 }
 
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:#003366;
+    border-radius:3px;
+    transition:.3s;
+}
+
+/* ===========================
+   CONTACT & FEEDBACK POPUPS
+=========================== */
+
+.contact-menu,
 .feedback-menu{
     position:relative;
 }
 
+.contact-box,
 .feedback-box{
     display:none;
     position:absolute;
-    top:40px;
+    top:42px;
     right:0;
-    width:290px;
-    background:white;
+    width:320px;
+    background:#fff;
     color:#012043;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-    font-family:Arial, sans-serif;
-    z-index:1000;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+    z-index:9999;
+    animation:popup .2s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:600px){
+
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:wrap;
+        padding:15px 20px;
+    }
+
+    .brand{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        flex:1;
+    }
+
+    .brand img{
+        width:45px;
+        height:45px;
+    }
+
+    .brand h1{
+        font-size:28px;
+        margin:0;
+    }
+
+    .hamburger{
+        display:flex;
+        flex-direction:column;
+        gap:5px;
+        cursor:pointer;
+        margin-left:auto;
+    }
+
+    .hamburger span{
+        width:28px;
+        height:3px;
+        background:#003366;
+        border-radius:3px;
+    }
+
+    #nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        margin-top:10px;
+        gap:0;
+        padding:0;
+    }
+
+    #nav-links.active{
+        display:flex;
+    }
+
+    #nav-links li{
+        width:100%;
+        margin:0;
+        padding:0;
+        list-style:none;
+        line-height:1;
+    }
+
+    #nav-links li a{
+        display:block;
+        padding:10px 15px;
+        margin:0;
+        text-align:center;
+        line-height:1.2;
+    }
+
+    .contact-box,
+    .feedback-box{
+        position:fixed;
+        top:90px;
+        left:50%;
+        right:auto;
+        transform:translateX(-50%);
+        width:320px;
+        max-width:90%;
+    }
+}
+
+/* ===========================
+   EXTRA SMALL PHONES
+=========================== */
+
+@media (max-width:380px){
+
+    nav{
+        padding:.8rem;
+    }
+
+    .brand h1{
+        font-size:1.2rem;
+    }
 }
 
     /* Hero Section */
