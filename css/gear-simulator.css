@@ -1,0 +1,751 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#def7ff;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#222;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+nav{
+    width:100%;
+    padding:0.75rem 2rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    border-bottom:1px solid rgba(0,0,0,.08);
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand img{
+    width:55px;
+    height:55px;
+    display:block;
+}
+
+.brand h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(1.4rem,2vw,1.8rem);
+    letter-spacing:2px;
+    margin:0;
+}
+
+.mech a{
+    text-decoration:none;
+    color:#012043;
+}
+
+.circuits a{
+    text-decoration:none;
+    color:#0057d9;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#003db8;
+    font-size:1.05rem;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#00bcd4;
+}
+
+/* ===========================
+   HAMBURGER MENU
+=========================== */
+
+.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:#003366;
+    border-radius:3px;
+    transition:.3s;
+}
+
+/* ===========================
+   CONTACT & FEEDBACK POPUPS
+=========================== */
+
+.contact-menu,
+.feedback-menu{
+    position:relative;
+}
+
+.contact-box,
+.feedback-box{
+    display:none;
+    position:absolute;
+    top:42px;
+    right:0;
+    width:320px;
+    background:#fff;
+    color:#012043;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+    z-index:9999;
+    animation:popup .2s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:600px){
+
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:wrap;
+        padding:15px 20px;
+    }
+
+    .brand{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        flex:1;
+    }
+
+    .brand img{
+        width:45px;
+        height:45px;
+    }
+
+    .brand h1{
+        font-size:28px;
+        margin:0;
+    }
+
+    .hamburger{
+        display:flex;
+        flex-direction:column;
+        gap:5px;
+        cursor:pointer;
+        margin-left:auto;
+    }
+
+    .hamburger span{
+        width:28px;
+        height:3px;
+        background:#003366;
+        border-radius:3px;
+    }
+
+    #nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        margin-top:10px;
+        gap:0;
+        padding:0;
+    }
+
+    #nav-links.active{
+        display:flex;
+    }
+
+    #nav-links li{
+        width:100%;
+        margin:0;
+        padding:0;
+        list-style:none;
+        line-height:1;
+    }
+
+    #nav-links li a{
+        display:block;
+        padding:10px 15px;
+        margin:0;
+        text-align:center;
+        line-height:1.2;
+    }
+
+    .contact-box,
+    .feedback-box{
+        position:fixed;
+        top:90px;
+        left:50%;
+        right:auto;
+        transform:translateX(-50%);
+        width:320px;
+        max-width:90%;
+    }
+}
+
+/* ===========================
+   EXTRA SMALL PHONES
+=========================== */
+
+@media (max-width:380px){
+
+    nav{
+        padding:.8rem;
+    }
+
+    .brand h1{
+        font-size:1.2rem;
+    }
+}
+
+/* ===========================
+   GEAR GENERATOR
+=========================== */
+
+/* ===========================
+   SIMULATOR LAYOUT
+=========================== */
+
+.simulator-layout{
+
+    display:grid;
+
+    grid-template-columns:280px minmax(0, 1fr);
+
+    width:100%;
+
+    height:calc(100vh - 70px);
+
+    overflow:hidden;
+
+}
+
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.control-panel{
+
+    width:100%;
+
+    height:100%;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    background:#ffffff;
+
+    padding:20px;
+
+    border-right:1px solid rgba(0,0,0,.15);
+
+    box-shadow:2px 0 8px rgba(0,0,0,.08);
+
+}
+
+
+.add-gear-button{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#0057d9;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+.add-gear-button:hover{
+
+    background:#003db8;
+
+}
+
+.input-parameter-section{
+
+    margin-top:20px;
+
+}
+
+.input-parameter-section h3{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+
+.parameter-row{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:12px;
+
+}
+
+
+.parameter-row label{
+
+    width:70px;
+
+}
+
+
+.parameter-row input{
+
+    width:150px;
+
+    padding:6px;
+
+}
+
+
+.parameter-row select{
+
+    width:230px;
+
+    height:40px;
+
+    padding:6px 10px;
+
+}
+
+
+.section-title{
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+
+}
+
+
+.parameter-button{
+
+    width:100%;
+
+    padding:10px;
+
+    border:none;
+
+    background:none;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+}
+
+
+.parameter-button:hover{
+
+    background:#eeeeee;
+
+}
+
+
+.gear-dropdown{
+
+    display:none;
+
+    padding:5px 10px 10px 25px;
+
+}
+
+
+.gear-dropdown.active{
+
+    display:block;
+
+}
+
+
+#gearParameterSelect{
+
+    width:100%;
+
+    padding:7px;
+
+}
+
+/* ===========================
+   GEAR TRAIN BUTTONS
+=========================== */
+
+.gear-train-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:10px;
+
+}
+
+
+.gear-train-buttons button{
+
+    flex:1;
+
+    padding:11px;
+
+    border:none;
+
+    border-radius:6px;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+/* ===========================
+   RUN BUTTON
+=========================== */
+
+.run-gear-train-button{
+
+    background:#0057d9;
+
+}
+
+
+.run-gear-train-button:hover{
+
+    background:#003db8;
+
+}
+
+
+/* ===========================
+   STOP BUTTON
+=========================== */
+
+.stop-gear-train-button{
+
+    background:#dc3545;
+
+}
+
+
+.stop-gear-train-button:hover{
+
+    background:#b02a37;
+
+}
+
+/* ===========================
+   GEAR LIST
+=========================== */
+
+.gear-list{
+
+    margin-top:20px;
+
+}
+
+
+.gear-item{
+
+    padding:12px;
+
+    margin-bottom:8px;
+
+    background:#f1f7ff;
+
+    border:1px solid #cbd8e8;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+.gear-item:hover{
+
+    background:#dcecff;
+
+}
+
+
+/* ===========================
+   MODAL OVERLAY
+=========================== */
+
+.gear-modal-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:2000;
+
+}
+
+
+.gear-modal-overlay.active{
+
+    display:flex;
+
+}
+
+
+/* ===========================
+   MODAL
+=========================== */
+
+.gear-modal{
+
+    width:380px;
+
+    max-width:90%;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.3);
+
+}
+
+
+.gear-modal h2{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#012043;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+
+.gear-modal label{
+
+    display:block;
+
+    margin-top:12px;
+
+    margin-bottom:5px;
+
+    font-weight:bold;
+
+}
+
+
+.gear-modal input{
+
+    width:100%;
+
+    padding:10px;
+
+    border:1px solid #aaa;
+
+    border-radius:6px;
+
+    font-size:1rem;
+
+}
+
+
+.modal-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+
+.modal-buttons button{
+
+    flex:1;
+
+    padding:11px;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+}
+
+#deleteGear{
+
+    background:#dc3545;
+
+    color:white;
+
+    display:none;
+
+}
+
+
+#deleteGear:hover{
+
+    background:#b02a37;
+}
+
+
+
+
+#cancelGear{
+
+    background:#ddd;
+
+}
+
+
+#generateGear{
+
+    background:#0057d9;
+
+    color:white;
+
+}
+
+
+#generateGear:hover{
+
+    background:#003db8;
+
+}
+
+#gearPressureAngle:disabled{
+
+    background:#e0e0e0;
+
+    color:#777;
+
+    cursor:not-allowed;
+
+    border:1px solid #aaa;
+
+}
+
+/* ===========================
+   CANVAS AREA
+=========================== */
+
+.canvas-area{
+
+    flex:1;
+
+    position:relative;
+
+    min-width:0;
+
+    min-height: 0;
+
+    height: 100%;
+
+    overflow:hidden;
+
+}
+
+
+#simulationCanvas{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    background:#def7ff;
+
+    cursor: grab;
+
+}
