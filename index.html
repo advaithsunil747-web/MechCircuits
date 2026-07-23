@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
 <link rel="icon" type="image/png" href="/logo.png">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9DNTKM565"></script>
@@ -27,40 +26,44 @@
 <body>
 
   <!-- Navbar -->
-  <nav>
-  <div class="brand">
-    <img src="images/logo.png" alt="MechCircuits Logo">
-    <h1><span class="mech">Mech</span><span class="circuits">Circuits</span></h1>
-  </div>
+<nav>
 
-  <!-- Hamburger button -->
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="brand">
+        <img src="logo.png" alt="MechCircuits Logo">
 
-  <ul id="nav-links" class="nav-right">
+        <h1>
+            <span class="mech"><a href="index.html">Mech</a></span><span class="circuits"><a href="index.html">Circuits</a></span>
+        </h1>
+    </div>
 
-    <li>
-      <a href="index.html">Home</a>
-    </li>
+    <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
-    <li class="contact-menu">
-      <a href="#" onclick="toggleContact(event)">Contact Us</a>
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
 
-      <div class="contact-box" id="contactBox">
-        For any queries please contact:<br>
-        <b>mechcircuits.queries@gmail.com <br>or<br> +91 8089906309</b>
-      </div>
-    </li>
+        <li class="contact-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleContact(); return false;">Contact Us</a>
 
-    <li class="feedback-menu">
-      <a href="#" onclick="toggleFeedback(event)">Feedback & Suggestions</a>
+            <div class="contact-box" id="contactBox">
+                <p><strong>For any queries, please email us at:</strong></p>
+                <p>mechcircuits.queries@gmail.com</p>
+            </div>
+        </li>
 
-      <div class="feedback-box" id="feedbackBox">
-        For feedback & suggestions email:<br>
-        <b>mechcircuits.feedback@gmail.com</b>
-      </div>
-    </li>
+        <li class="feedback-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleFeedback(); return false;">Feedback &amp; Suggestions</a>
 
-  </ul>
+            <div class="feedback-box" id="feedbackBox">
+                <p><strong>We value your feedback and suggestions.Please email us at:</strong></p>
+                <p>mechcircuits.feedback@gmail.com</p>
+            </div>
+        </li>
+    </ul>
+
 </nav>
 
   <!-- Hero Section -->
@@ -78,7 +81,7 @@
 
     
 
-    <a href="battery-level-estimator.html" class="card-link">
+    <a href="batlevcalc.html" class="card-link">
 
   <div class="card">
 
