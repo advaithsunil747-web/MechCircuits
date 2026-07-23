@@ -245,8 +245,7 @@ nav ul li a:hover{
       justify-content:top;
       align-items:center;
       text-align:center;
-      height:85vh;
-      padding:20px;
+      padding:60px 20px 30px;
     }
 
     .hero h2{
@@ -265,11 +264,10 @@ nav ul li a:hover{
 
     /* Features */
     .features{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:25px;
-      padding:50px;
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
 
     .card{
@@ -279,6 +277,7 @@ nav ul li a:hover{
       flex-direction:column;
       justify-content:center;
       align-items:center;
+      margin:auto;   
       background:rgb(255, 255, 255);
       border:1px solid rgba(255,255,255,0.08);
       box-shadow:0 0 10px rgba(0, 0, 0, 0.1);
@@ -294,15 +293,16 @@ nav ul li a:hover{
     }
 
     .card-link{
+    display:inline-block;
     text-decoration:none;
-}
+    }
 
 /* Center Battery */
 .battery-container{
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:25px;
+    margin-bottom:15px;
 }
 
 /* Battery Body */
@@ -344,7 +344,9 @@ nav ul li a:hover{
 
     .card h3{
       color:#012043;
-      margin-bottom:15px;
+      margin-top:20px;
+      text-align:center;
+      font-size:26px;
     }
 
     .card p{
