@@ -2588,6 +2588,248 @@ canvas.addEventListener(
 
 );
 
+/* ===========================
+   TOUCH SUPPORT (MOBILE)
+=========================== */
+
+let lastTouchDistance = null;
+
+function getTouchPos(touch){
+
+    const rect =
+        canvas.getBoundingClientRect();
+
+    return {
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top
+    };
+
+}
+
+function getTouchDistance(touch1, touch2){
+
+    const dx =
+        touch1.clientX - touch2.clientX;
+
+    const dy =
+        touch1.clientY - touch2.clientY;
+
+    return Math.sqrt(dx * dx + dy * dy);
+
+}
+
+canvas.addEventListener(
+
+    "touchstart",
+
+    function(event){
+
+        event.preventDefault();
+
+        /*
+        ONE FINGER - drag gear or pan
+        */
+
+        if(event.touches.length === 1){
+
+            const pos =
+                getTouchPos(event.touches[0]);
+
+            const touchedGear =
+                getGearAtPosition(pos.x, pos.y);
+
+            lastMouseX = pos.x;
+            lastMouseY = pos.y;
+
+            if(touchedGear){
+
+                isDraggingGear = true;
+                isDragging = false;
+                selectedGear = touchedGear;
+
+            }
+            else{
+
+                isDragging = true;
+                isDraggingGear = false;
+                selectedGear = null;
+
+            }
+
+        }
+
+        /*
+        TWO FINGERS - pinch zoom
+        */
+
+        else if(event.touches.length === 2){
+
+            isDragging = false;
+            isDraggingGear = false;
+
+            lastTouchDistance =
+                getTouchDistance(
+                    event.touches[0],
+                    event.touches[1]
+                );
+
+        }
+
+    },
+
+    { passive: false }
+
+);
+
+canvas.addEventListener(
+
+    "touchmove",
+
+    function(event){
+
+        event.preventDefault();
+
+        /*
+        ONE FINGER - drag gear or pan
+        */
+
+        if(event.touches.length === 1){
+
+            const pos =
+                getTouchPos(event.touches[0]);
+
+            const movementX =
+                pos.x - lastMouseX;
+
+            const movementY =
+                pos.y - lastMouseY;
+
+            if(isDraggingGear && selectedGear){
+
+                selectedGear.x += movementX / zoom;
+                selectedGear.y += movementY / zoom;
+
+                tryMeshGear(selectedGear);
+
+                redrawCanvas();
+
+            }
+            else if(isDragging){
+
+                panX += movementX;
+                panY += movementY;
+
+                redrawCanvas();
+
+            }
+
+            lastMouseX = pos.x;
+            lastMouseY = pos.y;
+
+        }
+
+        /*
+        TWO FINGERS - pinch zoom
+        */
+
+        else if(event.touches.length === 2){
+
+            const newDistance =
+                getTouchDistance(
+                    event.touches[0],
+                    event.touches[1]
+                );
+
+            if(lastTouchDistance !== null){
+
+                const rect =
+                    canvas.getBoundingClientRect();
+
+                /*
+                Midpoint between the two fingers
+                */
+
+                const midX =
+                    (
+                        (event.touches[0].clientX + event.touches[1].clientX) / 2
+                    )
+                    - rect.left;
+
+                const midY =
+                    (
+                        (event.touches[0].clientY + event.touches[1].clientY) / 2
+                    )
+                    - rect.top;
+
+                const worldX =
+                    (midX - panX) / zoom;
+
+                const worldY =
+                    (midY - panY) / zoom;
+
+                const zoomFactor =
+                    newDistance / lastTouchDistance;
+
+                const newZoom =
+                    Math.max(
+                        0.2,
+                        Math.min(zoom * zoomFactor, 50)
+                    );
+
+                panX = midX - worldX * newZoom;
+                panY = midY - worldY * newZoom;
+
+                zoom = newZoom;
+
+                redrawCanvas();
+
+            }
+
+            lastTouchDistance = newDistance;
+
+        }
+
+    },
+
+    { passive: false }
+
+);
+
+canvas.addEventListener(
+
+    "touchend",
+
+    function(event){
+
+        if(event.touches.length === 0){
+
+            isDragging = false;
+            isDraggingGear = false;
+            selectedGear = null;
+            lastTouchDistance = null;
+
+        }
+        else if(event.touches.length === 1){
+
+            /*
+            Went from pinch (2 fingers)
+            back down to 1 finger
+            */
+
+            lastTouchDistance = null;
+
+            const pos =
+                getTouchPos(event.touches[0]);
+
+            lastMouseX = pos.x;
+            lastMouseY = pos.y;
+
+        }
+
+    }
+
+);
+
 function updateMeshedGearSpeeds(){
 
     /*
