@@ -285,6 +285,23 @@ nav ul li a:hover{
 
 }
 
+.intro-text{
+    text-align:center;
+}
+
+.intro-text h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(1.4rem, 2.5vw, 1.8rem);
+    color:#012043;
+    margin-bottom:10px;
+}
+
+.intro-text p{
+    margin:1 auto;
+    line-height:1.5;
+    color:#333;
+}
+
 
 .add-gear-button{
 
