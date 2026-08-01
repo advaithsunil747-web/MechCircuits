@@ -749,3 +749,45 @@ nav ul li a:hover{
     cursor: grab;
 
 }
+
+/* ===========================
+   SIMULATOR LAYOUT - MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+    .simulator-layout{
+        grid-template-columns:1fr;
+        grid-template-rows:auto 1fr;
+        height:auto;
+        min-height:calc(100vh - 70px);
+        overflow:visible;
+    }
+
+    .control-panel{
+        height:auto;
+        max-height:60vh;
+        border-right:none;
+        border-bottom:1px solid rgba(0,0,0,.15);
+        box-shadow:0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .canvas-area{
+        height:60vh;
+        min-height:300px;
+    }
+
+    .parameter-row{
+        flex-wrap:wrap;
+    }
+
+    .parameter-row label{
+        width:100%;
+        margin-bottom:4px;
+    }
+
+    .parameter-row input,
+    .parameter-row select{
+        width:100%;
+    }
+}
