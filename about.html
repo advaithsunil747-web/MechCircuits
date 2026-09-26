@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9DNTKM565"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T9DNTKM565');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Change these for each page -->
+    <title>About & Contact | MechCircuits</title>
+
+    <meta name="description" content="Learn more about MechCircuits, its purpose and developer, and find contact information for questions, feedback, suggestions, and error reports.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://mechcircuits.com/about.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ===========================
+        RESET
+        =========================== */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#def7ff;
+            min-height:100vh;
+            overflow-x:hidden;
+            color:#222;
+        }
+
+        /* ===========================
+        NAVBAR
+        =========================== */
+
+        nav{
+            width:100%;
+            padding:0.75rem 2rem;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:#fff;
+            border-bottom:1px solid rgba(0,0,0,.08);
+            box-shadow:0 2px 8px rgba(0,0,0,.08);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .brand img{
+            width:55px;
+            height:55px;
+            display:block;
+        }
+
+        .brand h1{
+            font-family:'Orbitron',sans-serif;
+            font-size:clamp(1.4rem,2vw,1.8rem);
+            letter-spacing:2px;
+            margin:0;
+        }
+
+        .mech a{
+            text-decoration:none;
+            color:#012043;
+        }
+
+        .circuits a{
+            text-decoration:none;
+            color:#0057d9;
+        }
+
+        nav ul{
+            display:flex;
+            align-items:center;
+            gap:2rem;
+            list-style:none;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:#003db8;
+            font-size:1.05rem;
+            transition:.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00bcd4;
+        }
+
+        /* ===========================
+        HAMBURGER MENU
+        =========================== */
+
+        .hamburger{
+            display:none;
+            flex-direction:column;
+            gap:5px;
+            cursor:pointer;
+        }
+
+        .hamburger span{
+            width:28px;
+            height:3px;
+            background:#003366;
+            border-radius:3px;
+            transition:.3s;
+        }
+
+        /* ===========================
+        CONTACT & FEEDBACK POPUPS
+        =========================== */
+
+        .contact-menu,
+        .feedback-menu{
+            position:relative;
+        }
+
+        .contact-box,
+        .feedback-box{
+            display:none;
+            position:absolute;
+            top:42px;
+            right:0;
+            width:320px;
+            background:#fff;
+            color:#012043;
+            padding:18px;
+            border-radius:12px;
+            box-shadow:0 8px 25px rgba(0,0,0,.25);
+            z-index:9999;
+            animation:popup .2s ease;
+        }
+
+        @keyframes popup{
+            from{
+                opacity:0;
+                transform:translateY(-8px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* ===========================
+        MOBILE
+        =========================== */
+
+        @media (max-width:600px){
+
+            nav{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                flex-wrap:wrap;
+                padding:15px 20px;
+            }
+
+            .brand{
+                display:flex;
+                align-items:center;
+                gap:10px;
+                flex:1;
+            }
+
+            .brand img{
+                width:45px;
+                height:45px;
+            }
+
+            .brand h1{
+                font-size:28px;
+                margin:0;
+            }
+
+            .hamburger{
+                display:flex;
+                flex-direction:column;
+                gap:5px;
+                cursor:pointer;
+                margin-left:auto;
+            }
+
+            .hamburger span{
+                width:28px;
+                height:3px;
+                background:#003366;
+                border-radius:3px;
+            }
+
+            #nav-links{
+                display:none;
+                width:100%;
+                flex-direction:column;
+                margin-top:10px;
+                gap:0;
+                padding:0;
+            }
+
+            #nav-links.active{
+                display:flex;
+            }
+
+            #nav-links li{
+                width:100%;
+                margin:0;
+                padding:0;
+                list-style:none;
+                line-height:1;
+            }
+
+            #nav-links li a{
+                display:block;
+                padding:10px 15px;
+                margin:0;
+                text-align:center;
+                line-height:1.2;
+            }
+
+            .contact-box,
+            .feedback-box{
+                position:fixed;
+                top:90px;
+                left:50%;
+                right:auto;
+                transform:translateX(-50%);
+                width:320px;
+                max-width:90%;
+            }
+        }
+
+        /* ===========================
+        EXTRA SMALL PHONES
+        =========================== */
+
+        @media (max-width:380px){
+
+            nav{
+                padding:.8rem;
+            }
+
+            .brand h1{
+                font-size:1.2rem;
+            }
+        }
+
+        /* ===========================
+            ABOUT PAGE CONTENT CARD
+            =========================== */
+
+            main{
+                padding:50px 20px;
+            }
+
+            .about-card{
+                width:100%;
+                max-width:1400px;
+                margin:0 auto;
+                background:#fff;
+                padding:45px 50px;
+                border-radius:16px;
+                box-shadow:0 8px 30px rgba(0,0,0,.12);
+                color:#222;
+            }
+
+            .about-card h2{
+                font-family:'Orbitron',sans-serif;
+                color:#003db8;
+                font-size:2.2rem;
+                margin-bottom:25px;
+            }
+
+            h2[id] {
+                scroll-margin-top: 100px;
+            }
+
+            .about-card h3{
+                color:#012043;
+                font-size:1.55rem;
+                margin-top:30px;
+                margin-bottom:10px;
+            }
+
+            .about-card p{
+                font-size:1.25rem;
+                line-height:1.7;
+                margin-bottom:15px;
+            }
+
+            .about-card ul {
+                margin: 10px 0 20px 0;
+                padding-left: 30px;
+            }
+
+            .about-card li {
+                font-size: 1.15rem;
+                line-height: 1.7;
+                margin-bottom: 8px;
+            }
+
+            @media (max-width:600px){
+
+                main{
+                    padding:25px 12px;
+                }
+
+                .about-card{
+                    padding:30px 22px;
+                    border-radius:12px;
+                }
+
+                .about-card h2{
+                    font-size:1.5rem;
+                }
+
+                .about-card h3{
+                    font-size:1.15rem;
+                }
+
+                .about-card p{
+                    font-size:1rem;
+                    line-height:1.6;
+                }
+            }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ==========================
+        NAVIGATION BAR
+========================== -->
+
+<nav>
+
+    <div class="brand">
+        <img src="logo.png" alt="MechCircuits Logo">
+
+        <h1>
+            <span class="mech"><a href="/">Mech</a></span><span class="circuits"><a href="/">Circuits</a></span>
+        </h1>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+    <ul id="nav-links">
+        <li><a href="/">Home</a></li>
+
+        <li class="contact-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleContact(); return false;">Contact Us</a>
+
+            <div class="contact-box" id="contactBox">
+                <p><strong>For any queries, please email us at:</strong></p>
+                <p>mechcircuits.queries@gmail.com</p>
+            </div>
+        </li>
+
+        <li class="feedback-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleFeedback(); return false;">Feedback &amp; Suggestions</a>
+
+            <div class="feedback-box" id="feedbackBox">
+                <p><strong>We value your feedback and suggestions.Please email us at:</strong></p>
+                <p>mechcircuits.feedback@gmail.com</p>
+            </div>
+        </li>
+    </ul>
+
+</nav>
+
+<!-- ==========================
+      PAGE CONTENT START
+========================== -->
+
+<main>
+
+    <div class="about-card">
+
+        <h2>About MechCircuits</h2>
+
+        <h3>What is MechCircuits?</h3>
+        <p>
+            MechCircuits is a free online platform providing useful calculators, simulators, and tools related to electronics, electrical and mechanical engineering, circuits, robotics, and other technical applications.
+        </p>
+        <p>
+            Our tools are designed to simplify calculations, visualize concepts, and help users explore engineering principles without requiring complex software or manual calculations.
+        </p>
+
+        <h3>Our Mission</h3>
+        <p>
+            Our mission is to make useful engineering and technical tools easily accessible to everyone.
+        </p>
+        <p>
+            We aim to create simple, practical, and easy-to-use tools that can help students, hobbyists, makers, engineers, and anyone interested in technical subjects understand concepts and perform calculations more conveniently.
+        </p>
+
+        <h3>About the Developer</h3>
+        <p>MechCircuits is independently developed and maintained by Advaith Sunil, a mechanical engineering student with an interest in engineering, electronics, robotics, programming, and technology.</p>
+        <p>The idea behind MechCircuits came from a simple interest in building useful tools that can make technical calculations and concepts easier to work with. The website is being developed as a personal project, with the goal of gradually bringing together a collection of practical calculators, simulators, and other engineering tools in one place.</p>
+        <p>As the website grows, new tools and features will be added based on personal projects, learning, and feedback from users.</p>
+
+        <h3>What We Offer</h3>
+        <p>
+            MechCircuits provides a growing collection of online tools covering different technical areas.
+        </p>
+        <p>
+            These may include:
+            <ul>
+                <li>Engineering calculators</li>
+                <li>Electronics and electrical calculators</li>
+                <li>Mechanical engineering calculators</li>
+                <li>Circuit-related tools</li>
+                <li>Engineering simulators and visualizations</li>
+                <li>Robotics-related tools</li>
+                <li>Other technical and educational resources</li>
+            </ul>
+        </p>
+        <p>
+            We continuously work on developing new tools and improving existing ones based on user needs and feedback.
+        </p>
+
+        <h3>Who Can Use MechCircuits?</h3>
+        <p>
+            MechCircuits is designed for a wide range of users, including:
+        </p>
+            <ul>
+                <li>Students learning engineering and technical subjects</li>
+                <li>Engineers and technical professionals</li>
+                <li>Electronics and robotics enthusiasts</li>
+                <li>DIY makers and hobbyists</li>
+                <li>Teachers and educators</li>
+                <li>Anyone interested in learning and exploring engineering concepts</li>
+            </ul>
+        <p>
+            The tools are intended to make technical calculations and concepts easier to explore and understand.
+        </p>
+
+        <h3>Accuracy and Continuous Improvement</h3>
+        <p>
+            We make reasonable efforts to develop our calculators and simulators using appropriate formulas, methods, and technical principles. However, results may depend on the formulas, assumptions, approximations, and input values used by each tool.
+        </p>
+        <p>
+            We continuously work to improve the accuracy, functionality, usability, and reliability of our tools. User feedback and reports of potential errors are valuable in identifying areas that may need review or improvement.
+        </p>
+        <p>
+            For important or real-world engineering applications, users should independently verify results and, where appropriate, consult a qualified professional before relying on them for decisions or designs.
+        </p>
+        <h2 id="contact">Contact Us</h2>
+        <p>Have a question about MechCircuits, found something that doesn't seem right, or have an idea for a new tool? Feel free to get in touch with us.</p>
+        <h3>General Queries</h3>
+        <p>For general questions about MechCircuits, our calculators, simulators, or anything else related to the website, you can contact us at:</p>
+        <p>Email: mechcircuits.queries@gmail.com</p>
+        <h3>Feedback, Suggestions & Error Reports</h3>
+        <p>If you have a suggestion for a new calculator or simulator, want to suggest an improvement, or have found an error in one of our tools, please contact us at:</p>
+        <p>Email: mechcircuits.feedback@gmail.com</p>
+        <h3>Reporting a Calculator or Simulator Error</h3>
+        <p>If you think a calculator or simulator is giving an incorrect result or isn't working as expected, please include as much of the following information as possible:</p>
+        <ul>
+            <li>Name of the calculator or simulator</li>
+            <li>Values or inputs you entered</li>
+            <li>Result you received</li>
+            <li>Result you expected, if known</li>
+            <li>A screenshot, if it helps explain the problem</li>
+        </ul>
+        <p>This will help us understand the problem and investigate it more easily.</p>
+        <h3>Website Problems</h3>
+        <p>For problems such as broken links, pages not loading correctly, display issues, or other technical problems with the website, you can also use:</p>
+        <p>Email: mechcircuits.feedback@gmail.com</p>
+        <p>Please include the page or tool where you experienced the problem and, if possible, a short description or screenshot of the issue.</p>
+        <h3>Response Time</h3>
+        <p>We try to respond to messages as soon as we can. Response times may vary depending on the type and number of messages we receive.</p>
+        <p>If you have questions about how information sent to us is handled, please refer to our Privacy Policy.</p>
+        
+
+    </div>
+
+</main>
+
+<!-- ==========================
+       PAGE CONTENT END
+========================== -->
+
+<script>
+
+/* ===========================
+   CONTACT POPUP
+=========================== */
+
+function toggleContact(){
+
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
+
+    feedback.style.display = "none";
+
+    if(contact.style.display === "block"){
+        contact.style.display = "none";
+    }
+    else{
+        contact.style.display = "block";
+    }
+}
+
+
+/* ===========================
+   FEEDBACK POPUP
+=========================== */
+
+function toggleFeedback(){
+
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
+
+    contact.style.display = "none";
+
+    if(feedback.style.display === "block"){
+        feedback.style.display = "none";
+    }
+    else{
+        feedback.style.display = "block";
+    }
+}
+
+
+/* ===========================
+   CLOSE POPUPS WHEN CLICKING OUTSIDE
+=========================== */
+
+document.addEventListener("click", function(event){
+
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
+
+    if(
+        !event.target.closest(".contact-menu") &&
+        !event.target.closest(".feedback-menu")
+    ){
+        contact.style.display = "none";
+        feedback.style.display = "none";
+    }
+
+});
+
+
+/* ===========================
+   HAMBURGER MENU
+=========================== */
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+
+});
+
+</script>
+
+</body>
+
+</html>

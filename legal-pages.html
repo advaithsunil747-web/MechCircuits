@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9DNTKM565"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T9DNTKM565');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Change these for each page -->
+    <title>Legal & Policies | MechCircuits</title>
+
+    <meta name="description" content="Read the MechCircuits Privacy Policy, Disclaimer, and Terms & Conditions to learn about privacy, website usage, calculators, simulators, and other policies.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://mechcircuits.com/legal-pages.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ===========================
+        RESET
+        =========================== */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#def7ff;
+            min-height:100vh;
+            overflow-x:hidden;
+            color:#222;
+        }
+
+        /* ===========================
+        NAVBAR
+        =========================== */
+
+        nav{
+            width:100%;
+            padding:0.75rem 2rem;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:#fff;
+            border-bottom:1px solid rgba(0,0,0,.08);
+            box-shadow:0 2px 8px rgba(0,0,0,.08);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .brand img{
+            width:55px;
+            height:55px;
+            display:block;
+        }
+
+        .brand h1{
+            font-family:'Orbitron',sans-serif;
+            font-size:clamp(1.4rem,2vw,1.8rem);
+            letter-spacing:2px;
+            margin:0;
+        }
+
+        .mech a{
+            text-decoration:none;
+            color:#012043;
+        }
+
+        .circuits a{
+            text-decoration:none;
+            color:#0057d9;
+        }
+
+        nav ul{
+            display:flex;
+            align-items:center;
+            gap:2rem;
+            list-style:none;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:#003db8;
+            font-size:1.05rem;
+            transition:.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00bcd4;
+        }
+
+        /* ===========================
+        HAMBURGER MENU
+        =========================== */
+
+        .hamburger{
+            display:none;
+            flex-direction:column;
+            gap:5px;
+            cursor:pointer;
+        }
+
+        .hamburger span{
+            width:28px;
+            height:3px;
+            background:#003366;
+            border-radius:3px;
+            transition:.3s;
+        }
+
+        /* ===========================
+        CONTACT & FEEDBACK POPUPS
+        =========================== */
+
+        .contact-menu,
+        .feedback-menu{
+            position:relative;
+        }
+
+        .contact-box,
+        .feedback-box{
+            display:none;
+            position:absolute;
+            top:42px;
+            right:0;
+            width:320px;
+            background:#fff;
+            color:#012043;
+            padding:18px;
+            border-radius:12px;
+            box-shadow:0 8px 25px rgba(0,0,0,.25);
+            z-index:9999;
+            animation:popup .2s ease;
+        }
+
+        @keyframes popup{
+            from{
+                opacity:0;
+                transform:translateY(-8px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* ===========================
+        MOBILE
+        =========================== */
+
+        @media (max-width:600px){
+
+            nav{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                flex-wrap:wrap;
+                padding:15px 20px;
+            }
+
+            .brand{
+                display:flex;
+                align-items:center;
+                gap:10px;
+                flex:1;
+            }
+
+            .brand img{
+                width:45px;
+                height:45px;
+            }
+
+            .brand h1{
+                font-size:28px;
+                margin:0;
+            }
+
+            .hamburger{
+                display:flex;
+                flex-direction:column;
+                gap:5px;
+                cursor:pointer;
+                margin-left:auto;
+            }
+
+            .hamburger span{
+                width:28px;
+                height:3px;
+                background:#003366;
+                border-radius:3px;
+            }
+
+            #nav-links{
+                display:none;
+                width:100%;
+                flex-direction:column;
+                margin-top:10px;
+                gap:0;
+                padding:0;
+            }
+
+            #nav-links.active{
+                display:flex;
+            }
+
+            #nav-links li{
+                width:100%;
+                margin:0;
+                padding:0;
+                list-style:none;
+                line-height:1;
+            }
+
+            #nav-links li a{
+                display:block;
+                padding:10px 15px;
+                margin:0;
+                text-align:center;
+                line-height:1.2;
+            }
+
+            .contact-box,
+            .feedback-box{
+                position:fixed;
+                top:90px;
+                left:50%;
+                right:auto;
+                transform:translateX(-50%);
+                width:320px;
+                max-width:90%;
+            }
+        }
+
+         main{
+                padding:50px 20px;
+            }
+
+            .legal-card{
+                width:100%;
+                max-width:1400px;
+                margin:0 auto;
+                background:#fff;
+                padding:45px 50px;
+                border-radius:16px;
+                box-shadow:0 8px 30px rgba(0,0,0,.12);
+                color:#222;
+            }
+
+            .legal-card h2{
+                font-family:'Orbitron',sans-serif;
+                color:#003db8;
+                font-size:2.2rem;
+                margin-bottom:25px;
+            }
+
+            h2[id] {
+                scroll-margin-top: 100px;
+            }
+
+            .legal-card h3{
+                color:#012043;
+                font-size:1.55rem;
+                margin-top:35px;
+                margin-bottom:12px;
+            }
+
+            .legal-card h4{
+                color:#012043;
+                font-size:1.35rem;
+                margin-top:35px;
+                margin-bottom:30px;
+            }
+
+            .legal-card p{
+                font-size:1.25rem;
+                line-height:1.7;
+                margin-bottom:15px;
+            }
+
+            .legal-card ul{
+                margin:10px 0 20px 0;
+                padding-left:25px;
+            }
+
+            .legal-card li{
+                font-size:1.15rem;
+                line-height:1.7;
+                margin-bottom:8px;
+            }
+
+            @media (max-width:600px){
+
+                main{
+                    padding:25px 12px;
+                }
+
+                .legal-card{
+                    padding:30px 22px;
+                    border-radius:12px;
+                }
+
+                .legal-card h2{
+                    font-size:1.5rem;
+                }
+
+                .legal-card h3{
+                    font-size:1.2rem;
+                }
+
+                .legal-card p,
+                .legal-card li{
+                    font-size:1rem;
+                    line-height:1.6;
+                }
+            }
+        
+
+        /* ===========================
+        EXTRA SMALL PHONES
+        =========================== */
+
+        @media (max-width:380px){
+
+            nav{
+                padding:.8rem;
+            }
+
+            .brand h1{
+                font-size:1.2rem;
+            }
+        }
+           
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ==========================
+        NAVIGATION BAR
+========================== -->
+
+<nav>
+
+    <div class="brand">
+        <img src="logo.png" alt="MechCircuits Logo">
+
+        <h1>
+            <span class="mech"><a href="/">Mech</a></span><span class="circuits"><a href="/">Circuits</a></span>
+        </h1>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+    <ul id="nav-links">
+        <li><a href="/">Home</a></li>
+
+        <li class="contact-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleContact(); return false;">Contact Us</a>
+
+            <div class="contact-box" id="contactBox">
+                <p><strong>For any queries, please email us at:</strong></p>
+                <p>mechcircuits.queries@gmail.com</p>
+            </div>
+        </li>
+
+        <li class="feedback-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleFeedback(); return false;">Feedback &amp; Suggestions</a>
+
+            <div class="feedback-box" id="feedbackBox">
+                <p><strong>We value your feedback and suggestions.Please email us at:</strong></p>
+                <p>mechcircuits.feedback@gmail.com</p>
+            </div>
+        </li>
+    </ul>
+
+</nav>
+
+<!-- ==========================
+      PAGE CONTENT START
+========================== -->
+
+<main>
+
+    <div class="legal-card">
+
+        <h2 id="privacy">Privacy Policy</h2>
+        <p>At MechCircuits, we respect your privacy. This Privacy Policy explains what information may be collected when you use our website and how that information may be used.</p>
+        <p>By using MechCircuits, you agree to the practices described in this Privacy Policy.</p>
+        
+        <h3>Information We Collect</h3>
+        <p>MechCircuits does not require users to create an account to use the website, and we do not currently provide a user account system.</p>
+        <p>We may receive information in the following ways:</p>
+        <ul>
+            <li><h4>Information You Provide</h4></li>
+            <p>If you contact us by email, we may receive information that you choose to provide, such as your name, email address, and the contents of your message.</p>
+            <p>We use this information mainly to respond to your questions, investigate reported problems, consider suggestions, and communicate with you when necessary.</p>
+            <p>Please avoid sending passwords, financial information, or other sensitive personal information through our contact emails.</p>
+            <li><h4>Information Collected Automatically</h4></li>
+            <p>Like many websites, MechCircuits may receive certain technical and usage information when you visit the website. This may include information such as your browser type, device information, pages visited, approximate location, and general information about how the website is being used.</p>
+            <p>We use this type of information to understand how visitors use the website and to improve its performance and content.</p>
+        </ul>
+        
+        <h3>Google Analytics</h3>
+        <p>MechCircuits uses Google Analytics to understand how visitors interact with the website.</p>
+        <p>Google Analytics may collect information about website visits and usage, including information about pages viewed, devices and browsers used, approximate geographic information, and other usage information.</p>
+        <p>We use this information to understand which parts of the website are useful to visitors and to improve MechCircuits.</p>
+        <p>Google's handling of information collected through its services is subject to Google's own policies and terms.</p>
+        
+        <h3>Cookies</h3>
+        <p>MechCircuits does not currently use cookies for user accounts, login sessions, or storing user preferences.</p>
+        <p>Some third-party services used on the website, such as analytics or advertising services, may use cookies or similar technologies according to their own policies and settings.</p>
+        <p>You can manage or disable cookies through your web browser settings. Please note that disabling cookies may affect the operation of some websites or third-party services.</p>
+        
+        <h3>Advertising</h3>
+        <p>MechCircuits may display advertisements through third-party advertising services.</p>
+        <p>If advertising services such as Google AdSense are used on the website, those services may use cookies or similar technologies to provide, measure, or personalize advertisements, subject to applicable settings and requirements.</p>
+        <p>This section will be updated when advertising services are introduced or changed.</p>
+        
+        <h3>Third-Party Services</h3>
+        <p>MechCircuits may use third-party services to provide analytics, advertising, hosting, or other website functionality.</p>
+        <p>These services may process information according to their own privacy policies. We recommend reviewing the privacy policies of third-party services when appropriate.</p>
+        
+        <h3>Data Retention</h3>
+        <p>If you contact us by email, we may retain your message and related information for as long as reasonably necessary to respond to your request, maintain records, or deal with follow-up questions.</p>
+        <p>We do not ask users to provide personal information simply to use our calculators and tools.</p>
+        
+        <h3>Children's Privacy</h3>
+        <p>MechCircuits is not intended to collect personal information from children. We do not knowingly request or collect personal information from children through account registration or similar features.</p>
+        <p>If you believe that a child has provided personal information to us, please contact us so that we can review the situation and take appropriate action where necessary.</p>
+        
+        <h3>Changes to This Privacy Policy</h3>
+        <p>We may update this Privacy Policy from time to time as MechCircuits changes or as new services and features are introduced.</p>
+        <p>Any changes will be posted on this page, along with an updated "Last updated" date.</p>
+
+        <h4>Last updated: [26 September 2026]</h4>
+
+        <h2 id="disclaimer">Disclaimer</h2>
+        <p>The information, calculators, simulations, and other tools available on MechCircuits are provided for general informational, educational, and practical purposes.</p>
+        <p>We make reasonable efforts to develop and maintain our tools, but we cannot guarantee that every result will always be completely accurate, complete, or suitable for every situation.</p>
+
+        <h3>Calculator and Simulator Results</h3>
+        <p>The results produced by MechCircuits tools depend on the formulas, assumptions, models, and information entered by the user.</p>
+        <p>Different engineering applications may also require factors or conditions that are not included in a particular calculator or simulation.</p>
+        <p>For this reason, users should review and independently verify important results before relying on them.</p>
+
+        <h3>Engineering and Safety-Critical Applications</h3>
+        <p>MechCircuits tools should not be treated as a substitute for professional engineering analysis, testing, design review, or expert advice.</p>
+        <p>Results should not be used as the sole basis for decisions involving structural safety, machinery, electrical safety, manufacturing, construction, or other applications where an incorrect calculation could result in injury, property damage, financial loss, or other serious consequences.</p>
+        <p>For such applications, calculations should be independently checked using appropriate engineering methods and, where necessary, reviewed by a qualified professional.</p>
+
+        <h3>User Input</h3>
+        <p>Users are responsible for entering appropriate and accurate values into the calculators and simulators.</p>
+        <p>An incorrect input can produce an incorrect result even when the underlying calculation is working as intended.</p>
+
+        <h3>Simulations and Models</h3>
+        <p>Simulations available on MechCircuits are mathematical or computational representations of real-world systems. They may simplify certain conditions or assumptions and therefore may not reproduce every aspect of real-world behavior.</p>
+        <p>Actual results can differ because of factors that are not represented in a particular simulation.</p>
+
+        <h3>Website Information</h3>
+        <p>Although we try to keep the information on MechCircuits useful and accurate, errors or outdated information may occasionally occur.</p>
+        <p>If you find an incorrect result, calculation, explanation, or other information, please let us know so that we can investigate and make corrections where appropriate.</p>
+
+        <h3>External Websites</h3>
+        <p>MechCircuits may contain links to websites or services operated by third parties. We do not control those websites and are not responsible for their content, availability, or privacy practices.</p>
+        <p>You should review the policies of external websites before using them.</p>
+        <p></p>
+
+        <h3>Acknowledgement</h3>
+        <p>Use of MechCircuits and its tools is at your own discretion and risk. We do not guarantee that the website or its tools will always be available, error-free, or suitable for a particular purpose.</p>
+        <p>By using MechCircuits, you acknowledge that you are responsible for determining whether a particular tool or result is appropriate for your intended use.</p>
+
+        <h4>Last updated: [26 September 2026]</h4>
+
+        <h2 id="terms">Terms & Conditions</h2>
+        <p>Welcome to MechCircuits. By accessing or using this website, you agree to follow these Terms & Conditions. If you do not agree with these terms, please do not use the website.</p>
+
+        <h3>Use of the Website</h3>
+        <p>MechCircuits provides online calculators, simulators, technical information, and other resources for general and educational use.</p>
+        <p>You may use the website for lawful purposes and in a way that does not interfere with the operation of the website or the experience of other users.</p>
+
+        <h3>Acceptable Use</h3>
+        <p>When using MechCircuits, you agree not to:</p>
+        <ul>
+            <li>Use the website for unlawful purposes.</li>
+            <li>Attempt to gain unauthorized access to the website or its systems.</li>
+            <li>Intentionally interfere with or damage the website.</li>
+            <li>Attempt to introduce malicious software or harmful code.</li>
+            <li>Abuse or excessively disrupt services provided by the website.</li>
+            <li>Copy or redistribute website content in ways that violate applicable laws or our rights.</li>
+        </ul>
+        <p>We may take reasonable steps to protect the website against misuse or harmful activity.</p>
+
+        <h3>Calculators and Simulators</h3>
+        <p>MechCircuits provides calculators and simulators as general-purpose tools.</p>
+        <p>You are responsible for checking the inputs you provide and determining whether a particular tool is appropriate for your situation.</p>
+        <p>Results should be independently verified when they are being used for important engineering, professional, financial, safety-related, or other consequential decisions.</p>
+        <p>Please also refer to our Disclaimer for additional information about the use of our tools.</p>
+
+        <h3>Intellectual Property</h3>
+        <p>Unless otherwise stated, the content created for MechCircuits, including the website design, original text, graphics, code, calculators, simulators, and other original materials, belongs to MechCircuits or is used with appropriate permission.</p>
+        <p>You may access and use the website for personal, educational, and other lawful purposes.</p>
+        <p>You may not reproduce, modify, redistribute, or commercially exploit substantial portions of our original content without appropriate permission, except where permitted by applicable law.</p>
+
+        <h3>User Feedback</h3>
+        <p>We welcome suggestions, comments, and reports about problems with our tools.</p>
+        <p>When submitting feedback, please make sure that you have the right to provide any material included in your message.</p>
+        <p>Please do not send confidential information, passwords, financial information, or other sensitive information through our feedback or contact email addresses.</p>
+        <p>We may use reasonable suggestions or feedback to improve MechCircuits and its tools.</p>
+
+        <h3>Third-Party Services and Links</h3>
+        <p>MechCircuits may use third-party services and may provide links to external websites.</p>
+        <p>Third-party services and websites operate independently and may have their own terms and privacy policies. We are not responsible for the content, availability, or policies of external websites.</p>
+
+        <h3>Website Availability</h3>
+        <p>We aim to keep MechCircuits available and working properly, but we cannot guarantee uninterrupted access.</p>
+        <p>We may change, update, temporarily disable, or remove features, calculators, simulators, or other parts of the website when necessary.</p>
+        <p></p>
+
+        <h3>Changes to These Terms</h3>
+        <p>These Terms & Conditions may be updated from time to time.</p>
+        <p>When changes are made, the updated version will be posted on this page and the "Last updated" date will be changed accordingly.</p>
+        <p>Continued use of MechCircuits after changes are posted means that you accept the updated terms.</p>
+
+        <h4>Last updated: [26 September 2026]</h4>
+    </div>
+
+</main>
+
+<!-- ==========================
+       PAGE CONTENT END
+========================== -->
+
+<script>
+
+/* ===========================
+   CONTACT POPUP
+=========================== */
+
+function toggleContact(){
+
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
+
+    feedback.style.display = "none";
+
+    if(contact.style.display === "block"){
+        contact.style.display = "none";
+    }
+    else{
+        contact.style.display = "block";
+    }
+}
+
+
+/* ===========================
+   FEEDBACK POPUP
+=========================== */
+
+function toggleFeedback(){
+
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
+
+    contact.style.display = "none";
+
+    if(feedback.style.display === "block"){
+        feedback.style.display = "none";
+    }
+    else{
+        feedback.style.display = "block";
+    }
+}
+
+
+/* ===========================
+   CLOSE POPUPS WHEN CLICKING OUTSIDE
+=========================== */
+
+document.addEventListener("click", function(event){
+
+    const contact = document.getElementById("contactBox");
+    const feedback = document.getElementById("feedbackBox");
+
+    if(
+        !event.target.closest(".contact-menu") &&
+        !event.target.closest(".feedback-menu")
+    ){
+        contact.style.display = "none";
+        feedback.style.display = "none";
+    }
+
+});
+
+
+/* ===========================
+   HAMBURGER MENU
+=========================== */
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+
+});
+
+</script>
+
+</body>
+
+</html>
