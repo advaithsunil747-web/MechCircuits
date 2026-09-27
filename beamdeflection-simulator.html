@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9DNTKM565"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T9DNTKM565');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Change these for each page -->
+    <title>Beam Deflection Simulator|MechCircuits</title>
+
+    <meta name="description" content="Page description here.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://mechcircuits.com/page-name.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/beamdeflection-simulator.css">
+
+</head>
+
+<body>
+
+<!-- ==========================
+        NAVIGATION BAR
+========================== -->
+
+<nav>
+
+    <div class="brand">
+        <img src="logo.png" alt="MechCircuits Logo">
+
+        <h1>
+            <span class="mech"><a href="/">Mech</a></span><span class="circuits"><a href="/">Circuits</a></span>
+        </h1>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+    <ul id="nav-links">
+        <li><a href="/">Home</a></li>
+
+        <li class="contact-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleContact(); return false;">Contact Us</a>
+
+            <div class="contact-box" id="contactBox">
+                <p><strong>For any queries, please email us at:</strong></p>
+                <p>mechcircuits.queries@gmail.com</p>
+            </div>
+        </li>
+
+        <li class="feedback-menu">
+            <a href="#" onclick="event.stopPropagation(); toggleFeedback(); return false;">Feedback &amp; Suggestions</a>
+
+            <div class="feedback-box" id="feedbackBox">
+                <p><strong>We value your feedback and suggestions.Please email us at:</strong></p>
+                <p>mechcircuits.feedback@gmail.com</p>
+            </div>
+        </li>
+    </ul>
+
+</nav>
+
+<!-- ==========================
+      PAGE CONTENT START
+========================== -->
+
+<main>
+
+    <div class="simulator-container">
+
+        <!-- =========================
+             LEFT CARD - INPUTS
+             ========================= -->
+
+        <div class="simulator-card input-card">
+
+            <h2>Beam Setup</h2>
+
+            <!-- Beam -->
+
+            <div class="input-section">
+
+                <h3>Beam</h3>
+
+                <div class="input-group">
+                    <label for="beamType">Beam Type</label>
+
+                    <select id="beamType" onchange="updateBeamVisualization()">
+                        <option value="cantilever">Cantilever</option>
+                        <option value="simply-supported">Simply Supported</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="beamLength">Beam Length (M)</label>
+
+                    <input
+                        type="number"
+                        id="beamLength"
+                        min="0.1"
+                        step="0.1"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- Material -->
+
+            <div class="input-section">
+
+                <h3>Material</h3>
+
+                <div class="input-group">
+                    <label for="material">Material</label>
+
+                    <select id="material" onchange="updateMaterial()">
+                        <option value="steel">Steel</option>
+                        <option value="aluminium">Aluminium</option>
+                        <option value="copper">Copper</option>
+                        <option value="iron">Iron</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="youngsModulus">
+                        Young's Modulus (GPa)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="youngsModulus"
+                        value="200"
+                        min="1"
+                        step="1"
+                    >
+                </div>
+                <div class="input-group">
+                    <label for="yieldStrength">
+                        Yield Strength (MPa)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="yieldStrength"
+                        value="250"
+                        min="0"
+                        step="1"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- Cross Section -->
+
+            <div class="input-section">
+
+                <h3>Cross Section</h3>
+
+                <div class="input-group">
+
+                    <label for="sectionType">
+                        Section Shape
+                    </label>
+
+                    <select id="sectionType" onchange="updateSectionFields()">
+                        <option value="solidRectangle">Solid Rectangle</option>
+                        <option value="solidCircle">Solid Circle</option>
+                        <option value="hollowCircle">Hollow Circle</option>
+                        <option value="hollowRectangle">Hollow Rectangle</option>
+                        <option value="iSection">I-Section</option>
+                        <option value="tSection">T-Section</option>
+                        <option value="cSection">C-Section</option>
+                        <option value="custom">Custom</option>
+                    </select>
+
+                </div>
+
+                <div id="sectionFigure"></div>
+                <div id="sectionInputs"></div>
+
+            </div>
+
+
+            <!-- =========================
+                LOADS
+                ========================= -->
+
+            <div class="input-section">
+
+                <h3>Loads</h3>
+
+                <div id="loadsContainer">
+
+                    <!-- LOAD 1 -->
+
+                    <div class="load-item">
+
+                        <div class="load-header">
+
+                            <button
+                                type="button"
+                                class="load-toggle"
+                                onclick="toggleLoad(this)"
+                            >
+                                <span>Load 1</span>
+                                <span class="load-arrow">▼</span>
+                            </button>
+
+                        </div>
+
+                        <div class="load-content">
+
+                            <div class="input-group">
+
+                                <label>
+                                    Load Type
+                                </label>
+
+                                <select
+                                    class="load-type"
+                                    onchange="updateLoadFields(this)"
+                                >
+                                    <option value="point">
+                                        Point Load
+                                    </option>
+
+                                    <option value="udl">
+                                        Uniformly Distributed Load
+                                    </option>
+
+                                    <option value="moment">
+                                        Applied Moment
+                                    </option>
+                                </select>
+
+                            </div>
+
+                            <div class="load-parameters">
+                                <!-- Parameters inserted by JavaScript -->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ADD LOAD BUTTON -->
+
+                <button
+                    type="button"
+                    class="add-load-btn"
+                    onclick="addLoad()"
+                >
+                    + Add Load
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             RIGHT CARD - VISUALIZATION
+             ========================= -->
+
+        <div class="simulator-card visualization-card">
+
+            <h2>Beam Visualization</h2>
+
+            <div class="beam-display" id="beamDisplay">
+            </div>
+
+
+            <h2>Results</h2>
+
+            <div class="results-grid">
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        Second Moment of Area
+                    </div>
+
+                    <div class="result-value" id="secondMomentResult">
+                        --
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+                TOOL DESCRIPTION
+                ========================= -->
+
+            <div class="tool-description">
+
+                <h2>About the Beam Deflection Simulator</h2>
+
+                <p>
+                    The Beam Deflection Simulator is a simple tool for analysing how a beam
+                    behaves when different loads are applied to it. It can be used to study
+                    both cantilever and simply supported beams and to see how the selected
+                    material, cross-section, beam length and applied loads affect the
+                    calculation.
+                </p>
+
+                <p>
+                    To use the simulator, first select the beam type and enter the beam
+                    length. Then select the material and provide its Young's modulus and
+                    yield strength. The cross-section of the beam can also be selected from
+                    the available shapes, and the required dimensions can then be entered.
+                    The simulator uses these dimensions to determine the second moment of
+                    area of the section.
+                </p>
+
+                <p>
+                    Loads can be added individually to the beam. The available load types
+                    are point loads, uniformly distributed loads (UDL) and applied moments.
+                    For a point load, the load magnitude and its position along the beam
+                    are entered. For a UDL, the load intensity and the starting and ending
+                    positions are specified. For an applied moment, the moment magnitude,
+                    position and direction can be selected.
+                </p>
+
+                <p>
+                    The calculations are based on the applied loads and the support
+                    conditions of the selected beam. Support reactions are determined using
+                    the equilibrium conditions of the beam, including the effects of point
+                    loads, distributed loads and applied moments. The loading information is
+                    then used to determine the internal forces and bending behaviour of the
+                    beam.
+                </p>
+
+                <p>
+                    The simulator also calculates the second moment of area of the selected
+                    cross-section, which is an important section property used in beam
+                    bending and deflection calculations. The value depends on the geometry
+                    and dimensions entered for the selected section.
+                </p>
+
+                <p>
+                    Enter the dimensions and loads in the units shown beside each input.
+                    Make sure that the values represent the actual beam and loading
+                    conditions you want to analyse. The calculator is intended for
+                    engineering calculations and learning purposes and should not be used
+                    as the sole basis for the design or safety assessment of a real
+                    structure.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- ==========================
+       PAGE CONTENT END
+========================== -->
+
+<script src="js/beamdeflection-simulator.js"></script>
+
+</body>
+
+</html>
