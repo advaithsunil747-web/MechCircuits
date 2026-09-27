@@ -1,0 +1,636 @@
+/* ===========================
+        RESET
+        =========================== */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#def7ff;
+            min-height:100vh;
+            overflow-x:hidden;
+            color:#222;
+        }
+
+        /* ===========================
+        NAVBAR
+        =========================== */
+
+        nav{
+            width:100%;
+            padding:0.75rem 2rem;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:#fff;
+            border-bottom:1px solid rgba(0,0,0,.08);
+            box-shadow:0 2px 8px rgba(0,0,0,.08);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .brand img{
+            width:55px;
+            height:55px;
+            display:block;
+        }
+
+        .brand h1{
+            font-family:'Orbitron',sans-serif;
+            font-size:clamp(1.4rem,2vw,1.8rem);
+            letter-spacing:2px;
+            margin:0;
+        }
+
+        .mech a{
+            text-decoration:none;
+            color:#012043;
+        }
+
+        .circuits a{
+            text-decoration:none;
+            color:#0057d9;
+        }
+
+        nav ul{
+            display:flex;
+            align-items:center;
+            gap:2rem;
+            list-style:none;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:#003db8;
+            font-size:1.05rem;
+            transition:.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00bcd4;
+        }
+
+        /* ===========================
+        HAMBURGER MENU
+        =========================== */
+
+        .hamburger{
+            display:none;
+            flex-direction:column;
+            gap:5px;
+            cursor:pointer;
+        }
+
+        .hamburger span{
+            width:28px;
+            height:3px;
+            background:#003366;
+            border-radius:3px;
+            transition:.3s;
+        }
+
+        /* ===========================
+        CONTACT & FEEDBACK POPUPS
+        =========================== */
+
+        .contact-menu,
+        .feedback-menu{
+            position:relative;
+        }
+
+        .contact-box,
+        .feedback-box{
+            display:none;
+            position:absolute;
+            top:42px;
+            right:0;
+            width:320px;
+            background:#fff;
+            color:#012043;
+            padding:18px;
+            border-radius:12px;
+            box-shadow:0 8px 25px rgba(0,0,0,.25);
+            z-index:9999;
+            animation:popup .2s ease;
+        }
+
+        @keyframes popup{
+            from{
+                opacity:0;
+                transform:translateY(-8px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* ===========================
+        MOBILE
+        =========================== */
+
+        @media (max-width:600px){
+
+            nav{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                flex-wrap:wrap;
+                padding:15px 20px;
+            }
+
+            .brand{
+                display:flex;
+                align-items:center;
+                gap:10px;
+                flex:1;
+            }
+
+            .brand img{
+                width:45px;
+                height:45px;
+            }
+
+            .brand h1{
+                font-size:28px;
+                margin:0;
+            }
+
+            .hamburger{
+                display:flex;
+                flex-direction:column;
+                gap:5px;
+                cursor:pointer;
+                margin-left:auto;
+            }
+
+            .hamburger span{
+                width:28px;
+                height:3px;
+                background:#003366;
+                border-radius:3px;
+            }
+
+            #nav-links{
+                display:none;
+                width:100%;
+                flex-direction:column;
+                margin-top:10px;
+                gap:0;
+                padding:0;
+            }
+
+            #nav-links.active{
+                display:flex;
+            }
+
+            #nav-links li{
+                width:100%;
+                margin:0;
+                padding:0;
+                list-style:none;
+                line-height:1;
+            }
+
+            #nav-links li a{
+                display:block;
+                padding:10px 15px;
+                margin:0;
+                text-align:center;
+                line-height:1.2;
+            }
+
+            .contact-box,
+            .feedback-box{
+                position:fixed;
+                top:90px;
+                left:50%;
+                right:auto;
+                transform:translateX(-50%);
+                width:320px;
+                max-width:90%;
+            }
+        }
+
+        /* ===========================
+        EXTRA SMALL PHONES
+        =========================== */
+
+        @media (max-width:380px){
+
+            nav{
+                padding:.8rem;
+            }
+
+            .brand h1{
+                font-size:1.2rem;
+            }
+        }
+
+
+/* ===========================
+   BEAM SIMULATOR
+   =========================== */
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 35px 25px 60px;
+}
+
+.simulator-container {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* ===========================
+   WHITE CARDS
+   =========================== */
+
+.simulator-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    border: 1px solid rgba(0,0,0,.05);
+}
+
+/* ===========================
+   BOTH SIMULATOR CARDS
+   =========================== */
+
+.input-card,
+.visualization-card {
+    height: 600px;
+    min-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* HEADINGS */
+
+.simulator-card h2 {
+    color: #012043;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   INPUT SECTIONS
+   =========================== */
+
+.input-section {
+    margin-bottom: 25px;
+}
+
+.input-section h3 {
+    font-size: 1rem;
+    color: #0057d9;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* INPUT GROUP */
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-size: .95rem;
+    outline: none;
+    background: #fff;
+    transition: .2s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #0057d9;
+    box-shadow: 0 0 0 3px rgba(0,87,217,.1);
+}
+
+.section-image {
+    display: block;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin: 15px auto;
+}
+
+/* ===========================
+   BEAM DISPLAY
+   =========================== */
+
+.beam-display {
+    width: 100%;
+    min-height: 220px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fafafa;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+}
+
+/* ===========================
+   RESULTS
+   =========================== */
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.result-box {
+    background: #f7fbff;
+    border: 1px solid #dceeff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.result-label {
+    font-size: .8rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.result-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #012043;
+}
+
+/* ===========================
+   DIAGRAMS
+   =========================== */
+
+.diagram {
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+/* ===========================
+   MOBILE
+   =========================== */
+
+@media (max-width: 900px) {
+
+    .simulator-container {
+        grid-template-columns: 1fr;
+    }
+
+    .input-card,
+    .visualization-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 20px 15px 40px;
+    }
+
+    .simulator-container {
+        gap: 18px;
+    }
+
+    .simulator-card {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===========================
+   LOADS
+   =========================== */
+
+.load-item {
+    width: 100%;
+    border: 1px solid #dce3ea;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background: #fff;
+}
+
+
+/* ===========================
+   LOAD HEADER
+   =========================== */
+
+.load-header {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    background: #f7fbff;
+}
+
+
+/* ===========================
+   LOAD TOGGLE
+   =========================== */
+
+.load-toggle {
+    flex: 1;
+    height: 48px;
+
+    padding: 0 15px;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    font-size: .95rem;
+    font-weight: 600;
+
+    color: #012043;
+
+    text-align: left;
+}
+
+.load-toggle:hover {
+    background: #eef7ff;
+}
+
+
+/* ===========================
+   ARROW
+   =========================== */
+
+.load-arrow {
+    font-size: .75rem;
+    color: #0057d9;
+
+    transition: transform .2s;
+}
+
+.load-item.active .load-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* ===========================
+   DELETE BUTTON
+   =========================== */
+
+.delete-load {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #d93025;
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .2s;
+}
+
+.delete-load:hover {
+    background: #fff0f0;
+    color: #b71c1c;
+}
+
+
+/* ===========================
+   LOAD CONTENT
+   =========================== */
+
+.load-content {
+    display: none;
+
+    padding: 18px 15px 5px;
+
+    border-top: 1px solid #e5e5e5;
+}
+
+.load-item.active .load-content {
+    display: block;
+}
+
+
+/* ===========================
+   ADD LOAD BUTTON
+   =========================== */
+
+.add-load-btn {
+    width: 100%;
+    padding: 11px;
+
+    border: 1px dashed #0057d9;
+    border-radius: 8px;
+
+    background: #f7fbff;
+    color: #0057d9;
+
+    font-size: .9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.add-load-btn:hover {
+    background: #eef7ff;
+}
+
+.beam-display {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.beam-svg {
+    display: block;
+    width: 100%;
+    max-width: 950px;
+    height: auto;
+}
+
+/* ===========================
+   TOOL DESCRIPTION
+   =========================== */
+
+.tool-description {
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.tool-description h2 {
+    color: #012043;
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+}
+
+.tool-description p {
+    font-size: .95rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 15px;
+}
