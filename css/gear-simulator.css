@@ -812,3 +812,145 @@ nav ul li a:hover{
 #simulationCanvas{
     touch-action:none;
 }
+
+
+/* About the Tool button */
+.about-tool-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 1px solid #00e5ff;
+    border-radius: 8px;
+    background: #012043;
+    color: #def7ff;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.about-tool-btn:hover {
+    background: #004fd6;
+    color: #ffffff;
+}
+
+/* Modal overlay */
+.about-tool-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.72);
+    align-items: center;
+    justify-content: center;
+}
+
+.about-tool-overlay.active {
+    display: flex;
+}
+
+/* Large About card */
+.about-tool-card {
+    width: min(900px, 100%);
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #ffffff;
+    color: #012043;
+    border-radius: 14px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Card header */
+.about-tool-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 26px;
+    background: #012043;
+    color: #ffffff;
+    border-bottom: 3px solid #00e5ff;
+}
+
+.about-tool-header h2 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.about-tool-close {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.about-tool-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Card content */
+.about-tool-content {
+    padding: 26px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.about-tool-content h3 {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    color: #004fd6;
+}
+
+.about-tool-content p {
+    margin: 10px 0;
+}
+
+.about-tool-content li {
+    margin-bottom: 6px;
+}
+
+.about-equation {
+    padding: 10px 14px;
+    border-left: 4px solid #00e5ff;
+    border-radius: 4px;
+    background: #def7ff;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+    .about-tool-overlay {
+        padding: 10px;
+    }
+
+    .about-tool-card {
+        max-height: 90vh;
+        border-radius: 10px;
+    }
+
+    .about-tool-header {
+        padding: 16px;
+    }
+
+    .about-tool-header h2 {
+        font-size: 19px;
+    }
+
+    .about-tool-content {
+        padding: 18px;
+        font-size: 14px;
+    }
+}
