@@ -112,11 +112,15 @@
         see real-time output speed (RPM) and torque based on your gear ratio.</p>
         </section>
 
+        <button id="aboutToolBtn" class="about-tool-btn" type="button">
+            <span>ⓘ</span> About the Tool
+        </button>
+
         <button id="addGearButton" class="add-gear-button">
             + Add Gear
         </button>
-
-
+        
+        
         <div class="gear-list" id="gearList">
 
             <!-- Added gears will appear here -->
@@ -353,6 +357,86 @@
     </div>
 
 </main>
+
+
+
+<!-- ABOUT THE TOOL MODAL -->
+<div class="about-tool-overlay" id="aboutToolModal">
+    <div class="about-tool-card" role="dialog"
+         aria-modal="true" aria-labelledby="aboutToolTitle">
+
+        <div class="about-tool-header">
+            <h2 id="aboutToolTitle">About the Gear Simulator</h2>
+            <button id="closeAboutTool" class="about-tool-close"
+                    type="button" aria-label="Close">&times;</button>
+        </div>
+
+        <div class="about-tool-content">
+            <p>
+                The Gear Simulator is an interactive engineering tool
+                that helps users understand how meshing gears work.
+                Create, configure, and animate gears while observing
+                changes in rotational speed and torque.
+            </p>
+
+            <h3>Features</h3>
+            <ul>
+                <li>Add, edit, and delete gears.</li>
+                <li>Adjust the number of teeth, module, and pitch diameter.</li>
+                <li>Automatically mesh compatible external gears.</li>
+                <li>Visualize gear rotation in real time.</li>
+                <li>Drag gears, zoom, and pan around the canvas.</li>
+                <li>Calculate output speed and ideal output torque.</li>
+            </ul>
+
+            <h3>Working Principles</h3>
+
+            <p><strong>Pitch Diameter:</strong></p>
+            <p class="about-equation">d = m × Z</p>
+
+            <p><strong>Centre Distance:</strong></p>
+            <p class="about-equation">a = (d₁ + d₂) / 2</p>
+
+            <p><strong>Output Speed:</strong></p>
+            <p class="about-equation">N₂ = −N₁ × (Z₁ / Z₂)</p>
+
+            <p><strong>Ideal Output Torque:</strong></p>
+            <p class="about-equation">T₂ = T₁ × (Z₂ / Z₁)</p>
+
+            <p>
+                Here, m is the module, Z is the number of teeth,
+                d is the pitch diameter, N is rotational speed,
+                and T is torque. External gears rotate in opposite
+                directions.
+            </p>
+
+            <h3>How to Use</h3>
+            <ol>
+                <li>Click Add Gear to create a gear.</li>
+                <li>Enter its number of teeth and module.</li>
+                <li>Add a compatible gear and position the gears to mesh.</li>
+                <li>Select an input gear and enter its speed and torque.</li>
+                <li>Click Run to start the simulation.</li>
+                <li>Select an output gear to view the calculated results.</li>
+            </ol>
+            <ul>
+                <li>Users can add as many gears as they want to create a gear train. Simply select an input gear to specify the input parameters, then select an output gear to view the calculated results.</li>
+            </ul>
+
+            <h3>Limitations</h3>
+            <p>
+                The simulator uses simplified gear-tooth geometry for
+                visualization. Its ideal torque calculations do not
+                account for friction or mechanical losses. Real gear
+                performance also depends on material properties,
+                lubrication, backlash, tooth geometry, and manufacturing
+                accuracy.
+            </p>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- ==========================
        PAGE CONTENT END
