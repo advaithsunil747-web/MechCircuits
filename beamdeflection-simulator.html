@@ -324,54 +324,206 @@
                 <h2>About the Beam Deflection Simulator</h2>
 
                 <p>
-                    The Beam Deflection Simulator is a simple tool for analysing how a beam
-                    behaves when different loads are applied to it. It can be used to study
-                    both cantilever and simply supported beams and to see how the selected
-                    material, cross-section, beam length and applied loads affect the
-                    calculation.
+                    The Beam Deflection Simulator is an interactive engineering tool designed
+                    to analyse the behaviour of beams subjected to different types of loads.
+                    It helps users understand how beam geometry, material properties, support
+                    conditions and applied loads influence the internal forces, bending
+                    behaviour and deformation of a beam. The simulator supports cantilever
+                    and simply supported beams, making it useful for engineering students,
+                    educators and anyone learning the fundamentals of structural and
+                    mechanical analysis.
+                </p>
+
+                <h3>1. Selecting the Beam Type and Length</h3>
+
+                <p>
+                    The analysis begins by selecting the beam's support configuration.
+                    A cantilever beam is fixed at one end and free at the other, whereas a
+                    simply supported beam rests on supports at both ends. This selection
+                    determines the support conditions used in the calculations. Enter the
+                    total beam length in metres to establish the span over which the loads
+                    act and the positions at which the results are evaluated.
+                </p>
+
+                <h3>2. Material Properties</h3>
+
+                <p>
+                    The material selection section defines the mechanical properties used
+                    in the analysis. Young's modulus represents the material's stiffness
+                    and is used when calculating elastic beam deflection. Yield strength
+                    represents the stress at which permanent deformation may begin and is
+                    used to assess the calculated bending stress against the selected
+                    material's specified strength.
                 </p>
 
                 <p>
-                    To use the simulator, first select the beam type and enter the beam
-                    length. Then select the material and provide its Young's modulus and
-                    yield strength. The cross-section of the beam can also be selected from
-                    the available shapes, and the required dimensions can then be entered.
-                    The simulator uses these dimensions to determine the second moment of
-                    area of the section.
+                    Users can select an available material or enter custom properties where
+                    supported. The entered values should correspond to the material being
+                    analysed and must use the units specified beside the input fields.
+                    Young's modulus must be positive for a meaningful elastic deflection
+                    calculation. Changing the material properties can affect the predicted
+                    deflection and the calculated factor of safety.
+                </p>
+
+                <h3>3. Selecting the Cross-Section</h3>
+
+                <p>
+                    The cross-section determines how effectively the beam resists bending.
+                    Depending on the available options, users can select shapes such as
+                    solid rectangles, solid circles, hollow circles, hollow rectangles,
+                    I-sections, T-sections and C-sections. The dimensions required for the
+                    selected shape are displayed so that the user can enter the appropriate
+                    width, height, thickness, diameter or other geometric measurements.
                 </p>
 
                 <p>
-                    Loads can be added individually to the beam. The available load types
-                    are point loads, uniformly distributed loads (UDL) and applied moments.
-                    For a point load, the load magnitude and its position along the beam
-                    are entered. For a UDL, the load intensity and the starting and ending
-                    positions are specified. For an applied moment, the moment magnitude,
-                    position and direction can be selected.
+                    The simulator uses the selected cross-section and its dimensions to
+                    calculate the second moment of area, commonly denoted by I. This
+                    geometric property describes the distribution of the cross-sectional
+                    area about the relevant bending axis. For a given material and loading
+                    condition, a section with a larger second moment of area will generally
+                    experience less elastic bending deflection. The result depends on the
+                    actual section geometry and the axis about which bending occurs.
+                </p>
+
+                <h3>4. Applying Loads to the Beam</h3>
+
+                <p>
+                    Loads can be added individually so that different loading arrangements
+                    can be examined. Each load has its own input fields, and the position
+                    or extent of the load must lie within the beam's length.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Point load:</strong> Enter the force magnitude in newtons
+                        and specify its position along the beam in metres. The load acts
+                        at the selected location.
+                    </li>
+                    <li>
+                        <strong>Uniformly distributed load (UDL):</strong> Enter the load
+                        intensity in newtons per metre and specify the starting and ending
+                        positions of the loaded region. The simulator uses the load
+                        intensity and loaded length to determine the equivalent resultant
+                        force for equilibrium calculations.
+                    </li>
+                    <li>
+                        <strong>Applied moment:</strong> Enter the moment magnitude in
+                        newton-metres, choose its position along the beam and select the
+                        applicable clockwise or anticlockwise direction. Applied moments
+                        contribute to the moment equilibrium of the beam and affect its
+                        bending behaviour.
+                    </li>
+                </ul>
+
+                <p>
+                    Multiple loads can be combined to study more complex loading
+                    arrangements. The magnitude, position, direction and extent of each
+                    load influence the resulting support reactions, shear force,
+                    bending moment and, where calculated, beam deflection.
+                </p>
+
+                <h3>5. Support Reactions and Internal Forces</h3>
+
+                <p>
+                    The simulator determines the support reactions from the equilibrium
+                    conditions of the selected beam. These calculations use the applied
+                    forces and moments, together with their positions, to satisfy the
+                    equations of static equilibrium. The resulting reactions describe the
+                    forces and, where applicable, the reaction moment developed at the
+                    supports to balance the loading.
                 </p>
 
                 <p>
-                    The calculations are based on the applied loads and the support
-                    conditions of the selected beam. Support reactions are determined using
-                    the equilibrium conditions of the beam, including the effects of point
-                    loads, distributed loads and applied moments. The loading information is
-                    then used to determine the internal forces and bending behaviour of the
-                    beam.
+                    The shear force diagram (SFD) illustrates how internal shear force
+                    varies along the beam, while the bending moment diagram (BMD) shows
+                    the variation of internal bending moment. Point loads produce changes
+                    in the shear force diagram, uniformly distributed loads produce
+                    continuous changes in shear force, and applied moments produce jumps
+                    in the bending moment diagram. The exact diagram shape and sign depend
+                    on the loading arrangement and the sign convention used by the
+                    simulator.
+                </p>
+
+                <h3>6. Beam Deflection and Bending Stress</h3>
+
+                <p>
+                    Beam deflection describes the displacement of the beam from its
+                    original, unloaded position. For a beam analysed within the linear
+                    elastic range, deflection is related to the bending moment, Young's
+                    modulus and the second moment of area. The flexural rigidity, EI,
+                    represents the resistance of the beam to elastic bending. A stiffer
+                    material or a cross-section with a larger second moment of area
+                    generally results in smaller deflections under the same loading
+                    conditions.
                 </p>
 
                 <p>
-                    The simulator also calculates the second moment of area of the selected
-                    cross-section, which is an important section property used in beam
-                    bending and deflection calculations. The value depends on the geometry
-                    and dimensions entered for the selected section.
+                    Where the deflection calculation is available, the deflection curve
+                    provides a visual representation of the beam's displacement along its
+                    length. The curve should be interpreted using the displayed scale and
+                    units. Deflection calculations based on elastic beam theory assume
+                    appropriate beam behaviour and material properties; large deformations,
+                    plastic behaviour and other effects outside the implemented model may
+                    not be represented.
                 </p>
 
                 <p>
-                    Enter the dimensions and loads in the units shown beside each input.
-                    Make sure that the values represent the actual beam and loading
-                    conditions you want to analyse. The calculator is intended for
-                    engineering calculations and learning purposes and should not be used
-                    as the sole basis for the design or safety assessment of a real
-                    structure.
+                    Bending stress is associated with the internal bending moment and the
+                    distance from the neutral axis. For a beam in elastic pure bending,
+                    the flexure formula relates bending stress to the bending moment,
+                    the distance from the neutral axis and the second moment of area.
+                    The calculated stress can be compared with the specified yield
+                    strength to help assess the beam under the analysed loading condition.
+                    If a factor of safety is displayed, it should be interpreted according
+                    to the stress measure and calculation method used by the simulator.
+                </p>
+
+                <h3>7. Visualisation and Calculation Results</h3>
+
+                <p>
+                    The simulator presents the beam and its loading arrangement visually,
+                    helping users identify the support locations, applied loads and their
+                    positions along the span. The shear force and bending moment diagrams
+                    provide additional information about how the internal forces vary
+                    along the beam. Where supported by the current configuration, the
+                    results section also displays calculated quantities such as support
+                    reactions, maximum shear force, maximum bending moment, bending stress,
+                    deflection, second moment of area and factor of safety.
+                </p>
+
+                <p>
+                    Results are updated in response to changes in the beam dimensions,
+                    material properties, cross-section or loading inputs when the relevant
+                    calculations are triggered. This allows users to compare different
+                    configurations and observe how changing one parameter affects the
+                    overall response. Values should always be interpreted alongside their
+                    units, the selected support conditions and the assumptions of the
+                    analysis.
+                </p>
+
+                <h3>8. How to Use the Results</h3>
+
+                <p>
+                    For a meaningful analysis, select the correct beam type, enter the
+                    beam length, verify the material properties, choose the appropriate
+                    cross-section and provide the dimensions required for that section.
+                    Add each load with its correct magnitude, position, direction and
+                    loaded length where applicable. Check that the inputs are consistent
+                    with the units displayed by the tool, then review the support reactions,
+                    diagrams and numerical results.
+                </p>
+
+                <p>
+                    The simulator is intended for educational use, preliminary engineering
+                    calculations and exploring the relationship between loads, internal
+                    forces, material stiffness, cross-sectional geometry and beam
+                    deformation. Its results depend on the correctness of the user inputs
+                    and the assumptions built into the implemented calculation methods.
+                    They should not be used as the sole basis for the design, certification
+                    or safety assessment of a real structure. Practical designs should be
+                    verified using appropriate engineering standards and, where necessary,
+                    reviewed by a qualified engineer.
                 </p>
 
             </div>
