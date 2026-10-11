@@ -3313,3 +3313,38 @@ function updateOutputValues(){
         " N.m";
 
 }
+
+
+const aboutToolBtn = document.getElementById("aboutToolBtn");
+const aboutToolModal = document.getElementById("aboutToolModal");
+const closeAboutTool = document.getElementById("closeAboutTool");
+
+function openAboutTool() {
+    aboutToolModal.classList.add("active");
+    closeAboutTool.focus();
+}
+
+function closeAboutToolModal() {
+    aboutToolModal.classList.remove("active");
+    aboutToolBtn.focus();
+}
+
+aboutToolBtn.addEventListener("click", openAboutTool);
+closeAboutTool.addEventListener("click", closeAboutToolModal);
+
+// Close when clicking outside the card
+aboutToolModal.addEventListener("click", function (event) {
+    if (event.target === aboutToolModal) {
+        closeAboutToolModal();
+    }
+});
+
+// Close with the Escape key
+document.addEventListener("keydown", function (event) {
+    if (
+        event.key === "Escape" &&
+        aboutToolModal.classList.contains("active")
+    ) {
+        closeAboutToolModal();
+    }
+});
